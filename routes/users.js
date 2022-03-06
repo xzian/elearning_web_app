@@ -1,28 +1,37 @@
 const express = require('express')
 const router = express.Router()
+
+// Password hashing
 const bcrypt = require('bcrypt')
+
+// Database access (User collection)
 const mongoose = require('mongoose')
 const User = require('../models/user')
+const { response } = require('express')
 
-// User login route (get page)
+// Get the login route and access to the input data
 router.get('/login', async (req, res) => {
     res.render('users/login', { user: new User() })
 })
 
-// New user route (get page)
+// Get the registration route and 
+// access to the input data
 router.get('/register', (req, res) => {
     res.render('users/register', { user: new User() })
 })
 
-// User login route
-router.post('/', async (req, res) => {
+// Look for user in the database 
+// when the login form has been submitted
+// checkAuthenticated doesn't work until 
+// 'passport' is implemented
+router.post('/login', /*checkAuthenticated,*/ async (req, res) => {
     const user = await User.findOne({email : req.body.email})
     if (user == null) {
         return res.status(400).send('Cannot find user')
     }
     try {
         if (await bcrypt.compare(req.body.password, user.password)) {
-            res.send('Success')
+            res.redirect('/')
         } else {
             res.send('Not Allowed')
         }
@@ -31,29 +40,39 @@ router.post('/', async (req, res) => {
     }
 })
 
-// Register new user
-router.post('/', async (req, res) => {
-    try {
-        const hashedPassword = await bcrypt.hash(req.body.password, 10)
-        const user = new User({ 
-            email: req.body.email, 
-            password: hashedPassword 
-        })
-        user.save((err, newUser) => {
-            if (err) {
-                res.render('users/register', {
-                    email: email,
-                    errorMessage: 'Error creating account'
-                })
-            } else {
-                //res.status(201).redirect('users').send('success')
-                res.redirect('/')
-            }
-        })
-    } catch {
-        res.status(500).send()
+// Create new user and add them to 
+// the database when the registration 
+// form has been submitted
+router.post('/register', async (req, res) => {
+    let hashedPassword = null
+
+    if (req.body.password) {
+        hashedPassword = await bcrypt.hash(req.body.password, 10)
     }
+
+    const user = new User({
+        username: req.body.username,
+        email: req.body.email, 
+        password: hashedPassword 
+    })
+    
+    try {
+        const newUser = await user.save()
+        res.redirect('/users/login')
+    } catch {
+        res.render('users/register', {
+            user: user,
+            errorMessage: 'Error creating account'
+        })
+    }   
 })
 
+function checkAuthenticated(req, res, next) {
+    if (req.isAuthenticated()) {
+        return next()
+    } else {
+        return response.redirect('/login')
+    }
+}
 
 module.exports = router
