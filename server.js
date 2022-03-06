@@ -6,8 +6,10 @@ if (process.env.NODE_ENV !== 'production') {
 // Express server setup
 const express = require('express')
 const expressLayouts = require('express-ejs-layouts')
+const session = require('express-session')
 const app = express()
 
+// Post request processing
 const bodyParser = require('body-parser')
 
 // Route files
@@ -17,12 +19,28 @@ const studyingMaterialRouter = require('./routes/studying_material')
 const testsRouter = require('./routes/tests')
 const statisticsRouter = require('./routes/statistics')
 
-// Database setup
-const mongoose = require('mongoose')
-const db = mongoose.connection
-mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true})
-db.on('error', error => console.error(error))
-db.once('open', () => console.log('Connected to Mongoose'))
+// Session setup
+const MongoStore = require('connect-mongo')//.default
+const sessionStore = MongoStore.create({
+    mongoUrl: process.env.DATABASE_URL,
+    collection: 'sessions'
+})
+
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true,
+    store: sessionStore,
+    cookie: {
+        maxAge: 24 * 60 * 60 * 1000 // 1 day
+    }
+}))
+
+// Passport setup
+const passport = require('passport')
+require('./config/passport')
+app.use(passport.initialize())
+app.use(passport.session())
 
 // Views setup
 app.set('view engine', 'ejs')
