@@ -22,7 +22,8 @@ router.get('/register', (req, res) => {
     res.render('users/register', { user: new User() })
 })
 
-router.get('/profile', checkAuthenticated, (req, res) => {
+router.get('/profile', checkAuthenticated, async (req, res) => {
+    console.log(req.user)
     res.render('users/profile', { user: req.user })
 })
 
