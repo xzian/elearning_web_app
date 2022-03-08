@@ -1,14 +1,11 @@
 const express = require('express')
 const router = express.Router()
-
 // Password hashing
 const bcrypt = require('bcrypt')
 const genPassword = require('../lib/passwordUtils').genPassword
-
 // Passport authentication
 const passport = require('passport')
 require('../config/passport')
-
 // Database access (User collection)
 const mongoose = require('mongoose')
 const connection = require('../config/database')
@@ -25,27 +22,14 @@ router.get('/register', (req, res) => {
     res.render('users/register', { user: new User() })
 })
 
+router.get('/profile', checkAuthenticated, (req, res) => {
+    res.render('users/profile', { user: req.user })
+})
+
 // Look for user in the database 
 // when the login form has been submitted
-// checkAuthenticated doesn't work until 
-// 'passport' is implemented
-//router.post('/login', /*checkAuthenticated,*/ async (req, res) => {
-//    const user = await User.findOne({email : req.body.email})
-//    if (user == null) {
-//        return res.status(400).send('Cannot find user')
-//    }
-//    try {
-//        if (await bcrypt.compare(req.body.password, user.password)) {
-//            res.redirect('/')
-//        } else {
-//            res.send('Not Allowed')
-//        }
-//    } catch {
-//        res.status(500).send()
-//    }
-//})
 router.post('/login', passport.authenticate('local', {
-    successRedirect: '/users/login-success',
+    successRedirect: '/users/profile',
     failureRedirect: '/users/login-failure'
 }))
 
@@ -74,6 +58,11 @@ router.post('/register', async (req, res) => {
             errorMessage: `Error creating account: ${e}`
         })
     }   
+})
+
+router.delete('/logout', (req, res) => {
+    req.logOut()
+    res.redirect('/users/login')
 })
 
 function checkAuthenticated(req, res, next) {

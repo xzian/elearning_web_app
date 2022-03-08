@@ -17,7 +17,6 @@ const indexRouter = require('./routes/index')
 const usersRouter = require('./routes/users')
 const studyingMaterialRouter = require('./routes/studying_material')
 const testsRouter = require('./routes/tests')
-const statisticsRouter = require('./routes/statistics')
 
 // Session setup
 const MongoStore = require('connect-mongo')//.default
@@ -42,6 +41,10 @@ require('./config/passport')
 app.use(passport.initialize())
 app.use(passport.session())
 
+// Logging out
+const methodOverride = require('method-override')
+app.use(methodOverride('_method'))
+
 // Views setup
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
@@ -55,6 +58,5 @@ app.use('/', indexRouter)
 app.use('/users', usersRouter)
 app.use('/studying_material', studyingMaterialRouter)
 app.use('/tests', testsRouter)
-app.use('/statistics', statisticsRouter)
 
 app.listen(process.env.PORT || 3000)
