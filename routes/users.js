@@ -12,7 +12,7 @@ const connection = require('../config/database')
 const User = require('../models/user')
 
 // Get the login route and access to the input data
-router.get('/login', async (req, res) => {
+router.get('/login', (req, res) => {
     res.render('users/login', { user: new User() })
 })
 
@@ -22,8 +22,7 @@ router.get('/register', (req, res) => {
     res.render('users/register', { user: new User() })
 })
 
-router.get('/profile', checkAuthenticated, async (req, res) => {
-    console.log(req.user)
+router.get('/profile', checkAuthenticated, (req, res) => {
     res.render('users/profile', { user: req.user })
 })
 
