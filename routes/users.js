@@ -23,7 +23,10 @@ router.get('/register', (req, res) => {
 })
 
 router.get('/profile', checkAuthenticated, (req, res) => {
-    res.render('users/profile', { user: req.user })
+    res.render('users/profile', {
+        user: req.user,
+        message: 'You must be logged in'
+    })
 })
 
 // Look for user in the database 
@@ -40,15 +43,15 @@ router.post('/register', async (req, res) => {
     let hashedPassword = null
 
     if (req.body.password) {
-        hashedPassword = await genPassword(req.body.password)//await bcrypt.hash(req.body.password, 10)
+        hashedPassword = await genPassword(req.body.password)
     }
 
     const user = new User({
         username: req.body.username,
-        email: req.body.email, 
-        password: hashedPassword 
+        email: req.body.email,
+        password: hashedPassword
     })
-    
+
     try {
         const newUser = await user.save()
         res.redirect('/users/login')
@@ -57,7 +60,7 @@ router.post('/register', async (req, res) => {
             user: user,
             errorMessage: `Error creating account: ${e}`
         })
-    }   
+    }
 })
 
 router.delete('/logout', (req, res) => {
@@ -68,9 +71,8 @@ router.delete('/logout', (req, res) => {
 function checkAuthenticated(req, res, next) {
     if (req.isAuthenticated()) {
         return next()
-    } else {
-        return response.redirect('/login')
     }
+    return next()
 }
 
 module.exports = router

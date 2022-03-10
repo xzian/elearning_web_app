@@ -1,7 +1,7 @@
 <% if (!user) { %>
-    <a href="./users/login">Login</a>
-    <a href="./users/register">Register</a>
-<% } else { %>
+    <a href="/users/login">Login</a>
+    <a href="/users/register">Register</a>
+<% } else if (user.username) { %>
     <form action="/users/logout?_method=DELETE" method="POST">
         <button type="submit">Log Out</button>
     </form>

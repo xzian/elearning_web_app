@@ -1,2 +1,129 @@
-unit one test
-<a href="/tests">Back</a>
+<%- include('./_tests_header.ejs') %>
+<h3>Exercise 1</h3>
+<form action="/tests/one/1" method="post">
+  <div>
+    <div>
+      <p>Statement 1</p>
+      <p>Statement 2</p>
+      <p>Statement 3</p>
+      <p>Statement 4</p>
+      <p>Statement 5</p>
+    </div>
+    <div>
+      <select name="stmt1">
+        <%- include('./testOnePartials/_true_false_options.ejs') %>
+      </select>
+      <select name="stmt2">
+        <%- include('./testOnePartials/_true_false_options.ejs') %>
+      </select>
+      <select name="stmt3">
+        <%- include('./testOnePartials/_true_false_options.ejs') %>
+      </select>
+      <select name="stmt4">
+        <%- include('./testOnePartials/_true_false_options.ejs') %>
+      </select>
+      <select name="stmt5">
+        <%- include('./testOnePartials/_true_false_options.ejs') %>
+      </select>
+    </div>
+  </div>
+  <button type="submit">Submit answers</button>
+</form>
+
+<h3>Exercise 2</h3>
+<form action="/tests/one/2" method="post">
+  <div>
+    <div>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <%- include('./testOnePartials/_radio_group_one.ejs') %>
+    </div>
+    <div>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <%- include('./testOnePartials/_radio_group_two.ejs') %>
+    </div>
+    <div>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <%- include('./testOnePartials/_radio_group_three.ejs') %>
+    </div>
+    <div>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <%- include('./testOnePartials/_radio_group_four.ejs') %>
+    </div>
+    <div>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <%- include('./testOnePartials/_radio_group_five.ejs') %>
+    </div>
+  </div>
+  <button type="submit">Submit answers</button>
+</form>
+
+<h3>Exercise 3</h3>
+<form action="/tests/one/3" method="post">
+  <div>
+    <div>
+      <p>Item A</p>
+      <p>Item B</p>
+      <p>Item C</p>
+      <p>Item D</p>
+      <p>Item E</p>
+    </div>
+    <div>
+      <select name="itemA">
+        <%- include('./testOnePartials/_multiple_options.ejs') %>
+      </select>
+      <select name="itemB">
+        <%- include('./testOnePartials/_multiple_options.ejs') %>
+      </select>
+      <select name="itemC">
+        <%- include('./testOnePartials/_multiple_options.ejs') %>
+      </select>
+      <select name="itemD">
+        <%- include('./testOnePartials/_multiple_options.ejs') %>
+      </select>
+      <select name="itemE">
+        <%- include('./testOnePartials/_multiple_options.ejs') %>
+      </select>
+    </div>
+    <div>
+      <p>Item 1</p>
+      <p>Item 2</p>
+      <p>Item 3</p>
+      <p>Item 4</p>
+      <p>Item 5</p>
+    </div>
+  </div>
+  <button type="submit">Submit answers</button>
+</form>
+
+<h3>Exercise 4</h3>
+<form action="/tests/one/4" method="post">
+  <div>
+    <p>
+      Lorem ipsum <input type="text" name="gap1" /> sit amet consectetur <br />
+      adipisicing elit. <input type="text" name="gap2" /> quaerat <br />
+      cum nisi facere. Tempore <br />
+      consectetur <br />
+      aperiam incidunt nobis iste?
+    </p>
+    <p>
+      Lorem ipsum <input type="text" name="gap3" /> sit amet consectetur <br />
+      adipisicing elit. <input type="text" name="gap4" /> quaerat <br />
+      cum nisi facere. Tempore <br />
+      <input type="text" name="gap5" /> consectetur <br />
+      aperiam incidunt nobis iste?
+    </p>
+    <p>
+      Lorem ipsum sit amet consectetur <br />
+      adipisicing elit. <input type="text" name="gap6" /> quaerat <br />
+      cum nisi facere. Tempore <br />
+      <input type="text" name="gap7" /> consectetur <br />
+      aperiam incidunt nobis iste? Lorem ipsum <br />
+      <input type="text" name="gap8" /> sit amet consectetur <br />
+      adipisicing elit. <input type="text" name="gap9" /> quaerat <br />
+      cum nisi facere. Tempore <br />
+      <input type="text" name="gap10" /> consectetur <br />
+      aperiam incidunt nobis iste?
+    </p>
+  </div>
+  <button type="submit">Submit answers</button>
+</form>
