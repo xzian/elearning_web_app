@@ -19,20 +19,14 @@ const userSchema = new mongoose.Schema({
             type: String,
             required: true
         },
+        exercise: {
+            type: String,
+            required: true
+        },
         grade: {
             type: Number,
-            required: false
-        },
-        exercises: [{
-            exerciseName: {
-                type: String,
-                required: true
-            },
-            answers: {
-                type: Array,
-                required: true
-            }
-        }]
+            required: true
+        }
     }]
 })
 

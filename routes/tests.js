@@ -1,4 +1,5 @@
-const compareAnswers = require('../public/scripts/util/utils')
+const compareAnswers = require('../public/scripts/util/utils').compareAnswers
+const saveResult = require('../public/scripts/util/utils').saveResult
 const express = require('express')
 const router = express.Router()
 
@@ -28,10 +29,17 @@ router.get('/three', (req, res) => {
 router
     .route('/one/:exercise')
     .post(async (req, res) => {
+        const tUnit = 'one'
         const answers = req.body
-
-        const results = await compareAnswers({ unit: "one", exercise: req.params.exercise, answers: answers })
-        console.log(results)
+        
+        const result = {
+            id: req.user.id,
+            unit: tUnit,
+            exercise: req.params.exercise,
+            grade: await compareAnswers({ unit: tUnit, exercise: req.params.exercise, answers: answers })
+        }
+        console.log(result)
+        await saveResult(result)
 
         res.redirect('/tests/one')
     })
