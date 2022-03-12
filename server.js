@@ -16,7 +16,7 @@ const bodyParser = require('body-parser')
 const indexRouter = require('./routes/index')
 const usersRouter = require('./routes/users')
 const studyingMaterialRouter = require('./routes/studying_material')
-const testsRouter = require('./routes/tests')
+const testsRouter = require('./routes/exams')
 
 // Session setup
 const MongoStore = require('connect-mongo')//.default
@@ -57,6 +57,6 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use('/', indexRouter)
 app.use('/users', usersRouter)
 app.use('/studying_material', studyingMaterialRouter)
-app.use('/tests', testsRouter)
+app.use('/exams', testsRouter)
 
 app.listen(process.env.PORT || 3000)

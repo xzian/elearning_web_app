@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
-const Answer = require('../../../models/answer')
-const User = require('../../../models/user')
+const Answer = require('../models/answer')
+const User = require('../models/user')
 
 async function compareAnswers(test) {
     const answers = await Answer.findOne({ unit: test.unit, exercise: test.exercise })

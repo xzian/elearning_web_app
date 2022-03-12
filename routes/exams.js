@@ -1,31 +1,30 @@
-const compareAnswers = require('../public/scripts/util/utils').compareAnswers
-const saveResult = require('../public/scripts/util/utils').saveResult
+const compareAnswers = require('../config/utils').compareAnswers
+const saveResult = require('../config/utils').saveResult
 const express = require('express')
 const router = express.Router()
 
 var cachedAnswers = {}
 
 router.get('/', (req, res) => {
-    res.render('tests/index', { user: req.user })
+    res.render('exams/index', { user: req.user })
 })
 
 router
     .route('/one')
     .get((req, res) => {
-        res.render('tests/one', { user: req.user, chosen: cachedAnswers })
+        res.render('exams/one', { user: req.user, chosen: cachedAnswers })
     })
     .post((req, res) => {
-        res.redirect('/tests/one')
+        res.redirect('/exams/one')
     })
 
 router.get('/two', (req, res) => {
-    res.render('tests/two', { user: req.user })
+    res.render('exams/two', { user: req.user })
 })
 
 router.get('/three', (req, res) => {
-    res.render('tests/three', { user: req.user })
+    res.render('exams/three', { user: req.user })
 })
-
 
 router
     .route('/one/:exercise')
@@ -43,7 +42,7 @@ router
         console.log(result)
         await saveResult(result)
 
-        res.redirect('/tests/one')
+        res.redirect('/exams/one')
     })
 
 module.exports = router
