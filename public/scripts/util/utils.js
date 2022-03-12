@@ -13,7 +13,6 @@ async function compareAnswers(test) {
             }
             index++
         }
-
         return (test.exercise === '4') ? score : score * 2
     }
     return 0
@@ -21,13 +20,16 @@ async function compareAnswers(test) {
 
 async function saveResult(results) {
     const toAdd = {
-        unitName: results.unit, 
+        unitName: results.unit,
         exercise: results.exercise,
         grade: results.grade
     }
-    if (await User.findOne({_id: results.id, units: {$elemMatch: toAdd}}))
-        return
-    await User.updateOne({_id: results.id}, {$push: {units: toAdd}})
+
+    if (await User.find({ _id: results.id, units: { exercise: results.exercise } })) {
+        await User.updateOne({ _id: results.id }, { $pull: { units: { exercise: results.exercise } } })
+    }
+    
+    await User.updateOne({ _id: results.id }, { $push: { units: toAdd } })
 }
 
 module.exports.compareAnswers = compareAnswers

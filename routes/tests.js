@@ -3,6 +3,8 @@ const saveResult = require('../public/scripts/util/utils').saveResult
 const express = require('express')
 const router = express.Router()
 
+var cachedAnswers = {}
+
 router.get('/', (req, res) => {
     res.render('tests/index', { user: req.user })
 })
@@ -10,9 +12,8 @@ router.get('/', (req, res) => {
 router
     .route('/one')
     .get((req, res) => {
-        res.render('tests/one', { user: req.user })
+        res.render('tests/one', { user: req.user, chosen: cachedAnswers })
     })
-    //TODO: Pass user as parameter to fill what's been answered
     .post((req, res) => {
         res.redirect('/tests/one')
     })
@@ -30,13 +31,14 @@ router
     .route('/one/:exercise')
     .post(async (req, res) => {
         const tUnit = 'one'
-        const answers = req.body
+        cachedAnswers = req.body
+        console.log(cachedAnswers)
         
         const result = {
             id: req.user.id,
             unit: tUnit,
             exercise: req.params.exercise,
-            grade: await compareAnswers({ unit: tUnit, exercise: req.params.exercise, answers: answers })
+            grade: await compareAnswers({ unit: tUnit, exercise: req.params.exercise, answers: cachedAnswers })
         }
         console.log(result)
         await saveResult(result)
