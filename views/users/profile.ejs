@@ -1,15 +1,5 @@
-<% if (user) { %>
-    Hello, <%= user.username %>!
-    <% if (user.units.length > 0) { %>
-        <% let sum = 0 %>
-        <% user.units.forEach(unit => { %>
-            <% sum += unit.grade %>
-        <% }) %>
-        <p>Units completed: <%= user.units.length %> </p>
-        <p>Average: <%= sum/user.units.length %> </p>
-    <% } else { %>
-        <p>Complete more tests to access your statistics.</p>
-    <% } %>
-<% } else { %> 
-    <p> <%= message %> </p>
+<% if (user) { %> 
+    Hello, <%= user.username %>! 
+<% } else { %>
+    <p><%= message %></p>
 <% } %>

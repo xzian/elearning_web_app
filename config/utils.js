@@ -1,36 +1,84 @@
-const mongoose = require('mongoose')
-const Answer = require('../models/answer')
-const User = require('../models/user')
+const mongoose = require("mongoose");
+const Answer = require("../models/answer");
+const User = require("../models/user");
 
-async function compareAnswers(test) {
-    const answers = await Answer.findOne({ unit: test.unit, exercise: test.exercise })
-    if (answers.solutions !== undefined) {
-        let score = 0
-        let index = 0
-        for (const key in test.answers) {
-            if (answers.solutions[index] === test.answers[key]) {
-                score++
-            }
-            index++
+async function compareAnswers(submittedAnswers) {
+  const solutionDocument = await Answer.findOne({
+    unit: submittedAnswers.unit,
+  });
+  let correctCount = 0;
+  let incorrectCount = 0;
+  let submittedCount = 0;
+
+  let answers = {};
+  let answer = {};
+
+  if (solutionDocument) {
+    for (const key in solutionDocument.solutions) {
+      if (key in submittedAnswers.submitted) {
+        submittedCount++;
+        if (
+          solutionDocument.solutions[key] == submittedAnswers.submitted[key]
+        ) {
+          correctCount++;
+          //answers.correctAnswers.push(key);
+          answer["key"] = key;
+          answer["correct"] = solutionDocument.solutions[key];
+          answer["class"] = "correct-answer";
+        } else {
+          incorrectCount++;
         }
-        return (test.exercise === '4') ? score : score * 2
+      } else {
+        //answers.incorrectAnswers.push(key);
+        answer["key"] = key;
+        answer["correct"] = solutionDocument.solutions[key];
+        answer["incorrect"] = submittedAnswers.submitted[key];
+        answer["class"] = "incorrect-answer";
+      }
+      answers[key] = answer;
     }
-    return 0
+  }
+  let unansweredCount =
+    Object.keys(solutionDocument.solutions).length - submittedCount;
+
+  //console.log(`Submitted Answers: ${submittedCount}`);
+  //console.log(`Correct Answers: ${correctCount}`);
+  //console.log(`Incorrect Answers: ${incorrectCount}`);
+  //console.log(`Unanswered: ${unansweredCount}`);
+
+  return {
+    unit: submittedAnswers.unit,
+    submitted: submittedCount,
+    correct: correctCount,
+    incorrect: incorrectCount,
+    unanswered: unansweredCount,
+    answers: answers,
+  };
 }
 
-async function saveResult(results) {
-    const toAdd = {
-        unitName: results.unit,
-        exercise: results.exercise,
-        grade: results.grade
-    }
-
-    if (await User.find({ _id: results.id, units: { exercise: results.exercise } })) {
-        await User.updateOne({ _id: results.id }, { $pull: { units: { exercise: results.exercise } } })
-    }
-    
-    await User.updateOne({ _id: results.id }, { $push: { units: toAdd } })
+async function saveResult(exams) {
+  const found = await User.find({
+    _id: exams.userId,
+    exams: {
+      unit: exams.results.unit,
+      submitted: exams.results.submitted,
+      correct: exams.results.correct,
+      incorrect: exams.results.incorrect,
+      unanswered: exams.results.unanswered,
+      answers: exams.results.answers,
+    },
+  });
+  if (found) {
+    await User.updateOne(
+      { _id: exams.userId },
+      { $pull: { exams: { unit: exams.results.unit } } }
+    );
+  }
+  await User.updateOne(
+    { _id: exams.userId },
+    { $push: { exams: exams.results } }
+  );
 }
 
-module.exports.compareAnswers = compareAnswers
-module.exports.saveResult = saveResult
+module.exports.compareAnswers = compareAnswers;
+module.exports.saveResult = saveResult;

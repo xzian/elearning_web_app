@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="/scripts/exams-events.js" defer></script>
-    <script src="/scripts/exercise-events.js" defer></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/scripts/switch-exercise-tab.js" defer></script>
+    <link rel="stylesheet" href="/stylesheets/main.css" />
     <title>Document</title>
-</head>
-<body>
-    <%- include('../partials/header.ejs') %>
-    <%- include('../partials/userLogging.ejs') %>
-    <%- include('../partials/errorMessage.ejs') %>
-    <%- include('../partials/successfulLogin.ejs') %>
-    <%- body %> 
-</body>
+  </head>
+  <body>
+    <%- include('../partials/header.ejs') %> <%-
+    include('../partials/userLogging.ejs') %> <%-
+    include('../partials/errorMessage.ejs') %> <%-
+    include('../partials/successfulLogin.ejs') %> <%- body %>
+  </body>
 </html>

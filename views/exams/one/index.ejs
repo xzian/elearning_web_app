@@ -1,9 +1,9 @@
-<%- include('./_examHeader.ejs') %>
-<h2>Unit 3 Test</h2>
-<%- include('./_exerciseHeader.ejs') %>
-<form action="/exams/three/3" method="post">
-  <div id="exam-three">
-    <div class="u3exercises true-false-container">
+<%- include('../_examHeader.ejs') %>
+<h2>Unit 1 Test</h2>
+<%- include('../_exerciseHeader.ejs') %>
+<form id="form-one" action="/exams/one/1" method="post">
+  <div id="exam-one">
+    <div class="u1exercices true-false-container">
       <h3>Exercise 1</h3>
       <label for="tf1">Statement 1</label>
       <select id="tf1" name="ex1a">
@@ -19,7 +19,7 @@
       </select>
       <label for="tf3">Statement 3</label>
       <select id="tf3" name="ex1c">
-        <option selected disabled value=""></option>
+        <option selected value=""></option>
         <option value="T">T</option>
         <option value="F">F</option>
       </select>
@@ -37,7 +37,7 @@
       </select>
     </div>
 
-    <div class="u3exercises select-one-container">
+    <div class="u1exercices select-one-container">
       <h3>Exercise 2</h3>
       <div>
         <p>Statement 1</p>
@@ -86,62 +86,80 @@
       </div>
     </div>
 
-    <div class="u3exercises match-container">
+    <div class="u1exercices match-container">
       <h3>Exercise 3</h3>
-      <select name="ex3a" id="">
-        <option value="">A</option>
-        <option value="">B</option>
-        <option value="">C</option>
-        <option value="">D</option>
-        <option value="">E</option>
-      </select>
-      <select name="ex3b" id="">
-        <option value="">A</option>
-        <option value="">B</option>
-        <option value="">C</option>
-        <option value="">D</option>
-        <option value="">E</option>
-      </select>
-      <select name="ex3c" id="">
-        <option value="">A</option>
-        <option value="">B</option>
-        <option value="">C</option>
-        <option value="">D</option>
-        <option value="">E</option>
-      </select>
-      <select name="ex3d" id="">
-        <option value="">A</option>
-        <option value="">B</option>
-        <option value="">C</option>
-        <option value="">D</option>
-        <option value="">E</option>
-      </select>
-      <select name="ex3e" id="">
-        <option value="">A</option>
-        <option value="">B</option>
-        <option value="">C</option>
-        <option value="">D</option>
-        <option value="">E</option>
-      </select>
+      <div>
+        <label for="ma1">Item 1</label>
+        <select id="ma1" name="ex3a">
+          <option value="">A</option>
+          <option value="">B</option>
+          <option value="">C</option>
+          <option value="">D</option>
+          <option value="">E</option>
+        </select>
+
+        <label for="ma2">Item 2</label>
+        <select id="ma2" name="ex3b">
+          <option value="">A</option>
+          <option value="">B</option>
+          <option value="">C</option>
+          <option value="">D</option>
+          <option value="">E</option>
+        </select>
+
+        <label for="ma3">Item 3</label>
+        <select id="ma3" name="ex3c">
+          <option value="">A</option>
+          <option value="">B</option>
+          <option value="">C</option>
+          <option value="">D</option>
+          <option value="">E</option>
+        </select>
+
+        <label for="ma4">Item 4</label>
+        <select id="ma4" name="ex3d">
+          <option value="">A</option>
+          <option value="">B</option>
+          <option value="">C</option>
+          <option value="">D</option>
+          <option value="">E</option>
+        </select>
+
+        <label for="ma5">Item 5</label>
+        <select for="ma5" name="ex3e">
+          <option value="">A</option>
+          <option value="">B</option>
+          <option value="">C</option>
+          <option value="">D</option>
+          <option value="">E</option>
+        </select>
+      </div>
+      <div>
+        <p>Item A</p>
+        <p>Item B</p>
+        <p>Item C</p>
+        <p>Item D</p>
+        <p>Item E</p>
+      </div>
     </div>
 
-    <div class="u3exercises fill-gaps-container">
+    <div class="u1exercices fill-gaps-container">
       <h3>Exercise 4</h3>
       <div>
-        <input type="text" name="ex4a" id="" />
-        <input type="text" name="ex4b" id="" />
-        <input type="text" name="ex4c" id="" />
+        <input type="text" name="ex4a" />
+        <input type="text" name="ex4b" />
+        <input type="text" name="ex4c" />
       </div>
       <div>
-        <input type="text" name="ex4d" id="" />
-        <input type="text" name="ex4e" id="" />
-        <input type="text" name="ex4f" id="" />
+        <input type="text" name="ex4d" />
+        <input type="text" name="ex4e" />
+        <input type="text" name="ex4f" />
       </div>
       <div>
-        <input type="text" name="ex4g" id="" />
-        <input type="text" name="ex4h" id="" />
-        <input type="text" name="ex4i" id="" />
-        <input type="text" name="ex4j" id="" />
+        <input type="text" name="ex4g" />
+        <input type="text" name="ex4h" />
+        <input type="text" name="ex4i" />
+        <input type="text" name="ex4j" />
       </div>
     </div>
   </div>
