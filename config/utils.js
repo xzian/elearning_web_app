@@ -21,21 +21,19 @@ async function compareAnswers(submittedAnswers) {
           solutionDocument.solutions[key] == submittedAnswers.submitted[key]
         ) {
           correctCount++;
-          //answers.correctAnswers.push(key);
-          answer["key"] = key;
-          answer["correct"] = solutionDocument.solutions[key];
+          answer["correct-answer"] = submittedAnswers.submitted[key];
           answer["class"] = "correct-answer";
         } else {
           incorrectCount++;
+          answer["incorrect-answer"] = submittedAnswers.submitted[key];
+          answer["class"] = "incorrect-answer";
         }
       } else {
-        //answers.incorrectAnswers.push(key);
-        answer["key"] = key;
-        answer["correct"] = solutionDocument.solutions[key];
-        answer["incorrect"] = submittedAnswers.submitted[key];
-        answer["class"] = "incorrect-answer";
+        answer["unanswered-answer"] = solutionDocument.solutions[key];
+        answer["class"] = "unanswered-answer";
       }
       answers[key] = answer;
+      answer = {};
     }
   }
   let unansweredCount =

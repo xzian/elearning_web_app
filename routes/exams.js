@@ -48,6 +48,8 @@ router.route("/one/:exercise").post(async (req, res) => {
     submitted: userAnswers,
   });
   await saveResult({ userId: req.user.id, results: examResults });
+  console.log(userAnswers);
+  console.log(examResults);
 
   res.redirect("/exams/one/results");
 });
