@@ -1,0 +1,23 @@
+.correct-answer {
+  pointer-events: none;
+}
+
+.incorrect-answer {
+  pointer-events: none;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid black;
+  transform: translateY(0.25em);
+}
+
+.correct-answer {
+  background-color: limegreen;
+}
+
+.incorrect-answer {
+  background-color: red;
+}

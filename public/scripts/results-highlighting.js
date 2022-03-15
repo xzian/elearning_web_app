@@ -1,4 +1,4 @@
-const correctAnswers = document.getElementsByClassName("correct-answer");
+/*const correctAnswers = document.getElementsByClassName("correct-answer");
 const incorrectAnswers = document.getElementsByClassName("incorrect-answer");
 
 for (const correctAnswer of correctAnswers) {
@@ -17,4 +17,4 @@ for (const incorrectAnswer of incorrectAnswers) {
     incorrectAnswer.checked = true;
     incorrectAnswer.style.accentColor = "red";
   }
-}
+}*/
