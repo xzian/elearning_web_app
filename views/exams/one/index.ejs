@@ -1,172 +1,191 @@
 <%- include('../_examHeader.ejs') %>
 <h2>Unit 1 Test</h2>
 <%- include('../_exerciseHeader.ejs') %>
-<form id="form-one" action="/exams/one/1" method="post">
-  <div id="exam-one">
-    <div class="u1exercices true-false-container">
-      <h3>Exercise 1</h3>
-      <label for="tf1">Statement 1</label>
-      <select id="tf1" name="ex1a">
-        <option selected disabled value=""></option>
-        <option value="T">T</option>
-        <option value="F">F</option>
-      </select>
-      <label for="tf2">Statement 2</label>
-      <select id="tf2" name="ex1b">
-        <option selected disabled value=""></option>
-        <option value="T">T</option>
-        <option value="F">F</option>
-      </select>
-      <label for="tf3">Statement 3</label>
-      <select id="tf3" name="ex1c">
-        <option selected disabled value=""></option>
-        <option value="T">T</option>
-        <option value="F">F</option>
-      </select>
-      <label for="tf4">Statement 4</label>
-      <select id="tf4" name="ex1d">
-        <option selected disabled value=""></option>
-        <option value="T">T</option>
-        <option value="F">F</option>
-      </select>
-      <label for="tf5">Statement 5</label>
-      <select id="tf5" name="ex1e">
-        <option selected disabled value=""></option>
-        <option value="T">T</option>
-        <option value="F">F</option>
-      </select>
-    </div>
+<div class="exam">
+  <form class="exam-form" id="form-one" action="/exams/one/1" method="post">
+    <div id="exam-one" class="exam-container">
+      <div class="u1exercices true-false-container">
+        <h3>Exercise 1</h3>
+        <div>
+          <label for="tf1">Statement 1</label>
+          <select id="tf1" name="ex1a">
+            <option selected disabled value=""></option>
+            <option value="T">T</option>
+            <option value="F">F</option>
+          </select>
+        </div>
+        <div>
+          <label for="tf2">Statement 2</label>
+          <select id="tf2" name="ex1b">
+            <option selected disabled value=""></option>
+            <option value="T">T</option>
+            <option value="F">F</option>
+          </select>
+        </div>
+        <div>
+          <label for="tf3">Statement 3</label>
+          <select id="tf3" name="ex1c">
+            <option selected disabled value=""></option>
+            <option value="T">T</option>
+            <option value="F">F</option>
+          </select>
+        </div>
+        <div>
+          <label for="tf4">Statement 4</label>
+          <select id="tf4" name="ex1d">
+            <option selected disabled value=""></option>
+            <option value="T">T</option>
+            <option value="F">F</option>
+          </select>
+        </div>
+        <div>
+          <label for="tf5">Statement 5</label>
+          <select id="tf5" name="ex1e">
+            <option selected disabled value=""></option>
+            <option value="T">T</option>
+            <option value="F">F</option>
+          </select>
+        </div>
+      </div>
 
-    <div class="u1exercices select-one-container">
-      <h3>Exercise 2</h3>
-      <div>
+      <div class="u1exercices multiple-choice-container">
+        <h3>Exercise 2</h3>
         <p>Statement 1</p>
-        <label for="cba1">Option 1</label>
-        <input id="cba1"" type="checkbox" name="ex2a" value="T"/>
-        <label for="cba2">Option 2</label>
-        <input id="cba2" type="checkbox" name="ex2b" value="F" />
-        <label for="cba3">Option 3</label>
-        <input id="cba3" type="checkbox" name="ex2c" value="F" />
-      </div>
-      <div>
+        <div>
+          <label for="cba1">Option 1</label>
+          <input id="cba1"" type="checkbox" name="ex2a" value="T"/>
+          <label for="cba2">Option 2</label>
+          <input id="cba2" type="checkbox" name="ex2b" value="F" />
+          <label for="cba3">Option 3</label>
+          <input id="cba3" type="checkbox" name="ex2c" value="F" />
+        </div>
         <p>Statement 2</p>
-        <label for="cbb1">Option 1</label>
-        <input id="cbb1"" type="checkbox" name="ex2d" value="F"/>
-        <label for="cbb2">Option 2</label>
-        <input id="cbb2" type="checkbox" name="ex2e" value="T" />
-        <label for="cbb3">Option 3</label>
-        <input id="cbb3" type="checkbox" name="ex2f" value="T" />
-      </div>
-      <div>
+        <div>
+          <label for="cbb1">Option 1</label>
+          <input id="cbb1"" type="checkbox" name="ex2d" value="F"/>
+          <label for="cbb2">Option 2</label>
+          <input id="cbb2" type="checkbox" name="ex2e" value="T" />
+          <label for="cbb3">Option 3</label>
+          <input id="cbb3" type="checkbox" name="ex2f" value="T" />
+        </div>
         <p>Statement 3</p>
-        <label for="cbc1">Option 1</label>
-        <input id="cbc1"" type="checkbox" name="ex2g" value="T"/>
-        <label for="cbc2">Option 2</label>
-        <input id="cbc2" type="checkbox" name="ex2h" value="F" />
-        <label for="cbc3">Option 3</label>
-        <input id="cbc3" type="checkbox" name="ex2i" value="T" />
-      </div>
-      <div>
+        <div>
+          <label for="cbc1">Option 1</label>
+          <input id="cbc1"" type="checkbox" name="ex2g" value="T"/>
+          <label for="cbc2">Option 2</label>
+          <input id="cbc2" type="checkbox" name="ex2h" value="F" />
+          <label for="cbc3">Option 3</label>
+          <input id="cbc3" type="checkbox" name="ex2i" value="T" />
+        </div>
         <p>Statement 4</p>
-        <label for="cbd1">Option 1</label>
-        <input id="cbd1"" type="checkbox" name="ex2j" value="T"/>
-        <label for="cbd2">Option 2</label>
-        <input id="cbd2" type="checkbox" name="ex2k" value="T" />
-        <label for="cbd3">Option 3</label>
-        <input id="cbd3" type="checkbox" name="ex2l" value="T" />
-      </div>
-      <div>
+        <div>
+          <label for="cbd1">Option 1</label>
+          <input id="cbd1"" type="checkbox" name="ex2j" value="T"/>
+          <label for="cbd2">Option 2</label>
+          <input id="cbd2" type="checkbox" name="ex2k" value="T" />
+          <label for="cbd3">Option 3</label>
+          <input id="cbd3" type="checkbox" name="ex2l" value="T" />
+        </div>
         <p>Statement 5</p>
-        <label for="cbe1">Option 1</label>
-        <input id="cbe1"" type="checkbox" name="ex2m" value="F"/>
-        <label for="cbe2">Option 2</label>
-        <input id="cbe2" type="checkbox" name="ex2n" value="T" />
-        <label for="cbe3">Option 3</label>
-        <input id="cbe3" type="checkbox" name="ex2o" value="F" />
+        <div>
+          <label for="cbe1">Option 1</label>
+          <input id="cbe1"" type="checkbox" name="ex2m" value="F"/>
+          <label for="cbe2">Option 2</label>
+          <input id="cbe2" type="checkbox" name="ex2n" value="T" />
+          <label for="cbe3">Option 3</label>
+          <input id="cbe3" type="checkbox" name="ex2o" value="F" />
+        </div>
+      </div>
+
+      <div class="u1exercices match-container">
+        <h3>Exercise 3</h3>
+        <div>
+          <label for="ma1">Item 1</label>
+          <select id="ma1" name="ex3a">
+            <option selected disabled value=""></option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+          </select>
+
+          <label for="ma2">Item 2</label>
+          <select id="ma2" name="ex3b">
+            <option selected disabled value=""></option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+          </select>
+
+          <label for="ma3">Item 3</label>
+          <select id="ma3" name="ex3c">
+            <option selected disabled value=""></option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+          </select>
+
+          <label for="ma4">Item 4</label>
+          <select id="ma4" name="ex3d">
+            <option selected disabled value=""></option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+          </select>
+
+          <label for="ma5">Item 5</label>
+          <select for="ma5" name="ex3e">
+            <option selected disabled value=""></option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+          </select>
+        </div>
+        <div>
+          <p>Item A</p>
+          <p>Item B</p>
+          <p>Item C</p>
+          <p>Item D</p>
+          <p>Item E</p>
+        </div>
+      </div>
+
+      <div class="u1exercices fill-gaps-container">
+        <h3>Exercise 4</h3>
+        <div>
+          <input type="text" name="ex4a" />
+          <input type="text" name="ex4b" />
+          <input type="text" name="ex4c" />
+        </div>
+        <div>
+          <input type="text" name="ex4d" />
+          <input type="text" name="ex4e" />
+          <input type="text" name="ex4f" />
+        </div>
+        <div>
+          <input type="text" name="ex4g" />
+          <input type="text" name="ex4h" />
+          <input type="text" name="ex4i" />
+          <input type="text" name="ex4j" />
+        </div>
       </div>
     </div>
-
-    <div class="u1exercices match-container">
-      <h3>Exercise 3</h3>
-      <div>
-        <label for="ma1">Item 1</label>
-        <select id="ma1" name="ex3a">
-          <option selected disabled value=""></option>
-          <option value="A">A</option>
-          <option value="B">B</option>
-          <option value="C">C</option>
-          <option value="D">D</option>
-          <option value="E">E</option>
-        </select>
-
-        <label for="ma2">Item 2</label>
-        <select id="ma2" name="ex3b">
-          <option selected disabled value=""></option>
-          <option value="A">A</option>
-          <option value="B">B</option>
-          <option value="C">C</option>
-          <option value="D">D</option>
-          <option value="E">E</option>
-        </select>
-
-        <label for="ma3">Item 3</label>
-        <select id="ma3" name="ex3c">
-          <option selected disabled value=""></option>
-          <option value="A">A</option>
-          <option value="B">B</option>
-          <option value="C">C</option>
-          <option value="D">D</option>
-          <option value="E">E</option>
-        </select>
-
-        <label for="ma4">Item 4</label>
-        <select id="ma4" name="ex3d">
-          <option selected disabled value=""></option>
-          <option value="A">A</option>
-          <option value="B">B</option>
-          <option value="C">C</option>
-          <option value="D">D</option>
-          <option value="E">E</option>
-        </select>
-
-        <label for="ma5">Item 5</label>
-        <select for="ma5" name="ex3e">
-          <option selected disabled value=""></option>
-          <option value="A">A</option>
-          <option value="B">B</option>
-          <option value="C">C</option>
-          <option value="D">D</option>
-          <option value="E">E</option>
-        </select>
-      </div>
-      <div>
-        <p>Item A</p>
-        <p>Item B</p>
-        <p>Item C</p>
-        <p>Item D</p>
-        <p>Item E</p>
-      </div>
-    </div>
-
-    <div class="u1exercices fill-gaps-container">
-      <h3>Exercise 4</h3>
-      <div>
-        <input type="text" name="ex4a" />
-        <input type="text" name="ex4b" />
-        <input type="text" name="ex4c" />
-      </div>
-      <div>
-        <input type="text" name="ex4d" />
-        <input type="text" name="ex4e" />
-        <input type="text" name="ex4f" />
-      </div>
-      <div>
-        <input type="text" name="ex4g" />
-        <input type="text" name="ex4h" />
-        <input type="text" name="ex4i" />
-        <input type="text" name="ex4j" />
-      </div>
-    </div>
-  </div>
-  <button type="submit" id="submit-exam-btn">Submit</button>
-</form>
+  </form>
+  <button
+    class="submit-exam"
+    type="submit"
+    form="form-one"
+    id="submit-exam-btn"
+  >
+    Submit
+  </button>
+</div>

@@ -10,9 +10,12 @@
     <title>Document</title>
   </head>
   <body>
-    <%- include('../partials/header.ejs') %> <%-
-    include('../partials/userLogging.ejs') %> <%-
-    include('../partials/errorMessage.ejs') %> <%-
-    include('../partials/successfulLogin.ejs') %> <%- body %>
+    <%- include('../partials/header.ejs') %> 
+    <%- include('../partials/userLogging.ejs') %> 
+    <%- include('../partials/errorMessage.ejs') %> 
+    <%- include('../partials/successfulLogin.ejs') %> 
+    <div class="inner-container">
+        <%- body %>
+    </div>
   </body>
 </html>

@@ -1,2 +1,19 @@
+@import "shared/fonts.css";
+@import "shared/variables.css";
+@import "shared/main-header.css";
+@import "shared/exercise-header.css";
 @import "shared/exercises.css";
 @import "shared/results.css";
+
+html {
+  min-width: 400px;
+  /*background-image: linear-gradient(
+    to right,
+    var(--color-background-dark),
+    var(--color-background-light)
+  );*/
+}
+
+.inner-container {
+  margin: 3rem 3rem;
+}
