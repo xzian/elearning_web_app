@@ -1,0 +1,140 @@
+<% 
+var answers;
+for (let i = 0; i < user.exams.length; i++) { 
+    if (user.exams[i].unit == "one") { 
+        answers = user.exams[i].answers;
+        break;
+    }
+} 
+%>
+<div class="exam-review">
+  <div class="u1exercices true-false-container">
+    <h3>Exercise 1</h3>
+    <label for="tf1">Statement 1</label>
+    <select id="tf1" name="ex1a" class="<%= answers.ex1a.class %>">
+      <option selected><%= answers.ex1a[answers.ex1a.class] %></option>
+    </select>
+    <label for="tf2">Statement 2</label>
+    <select id="tf2" name="ex1b" class="<%= answers.ex1b.class %>">
+      <option selected><%= answers.ex1b[answers.ex1b.class] %></option>
+    </select>
+    <label for="tf3">Statement 3</label>
+    <select id="tf3" name="ex1c" class="<%= answers.ex1c.class %>">
+      <option selected><%= answers.ex1c[answers.ex1c.class] %></option>
+    </select>
+    <label for="tf4">Statement 4</label>
+    <select id="tf4" name="ex1d" class="<%= answers.ex1d.class %>">
+      <option selected><%= answers.ex1d[answers.ex1d.class] %></option>
+    </select>
+    <label for="tf5">Statement 5</label>
+    <select id="tf5" name="ex1e" class="<%= answers.ex1e.class %>">
+      <option selected><%= answers.ex1e[answers.ex1e.class] %></option>
+    </select>
+  </div>
+
+  <div class="u1exercices select-one-container">
+    <h3>Exercise 2</h3>
+    <div>
+      <p>Statement 1</p>
+      <label for="cba1">Option 1</label>
+      <input id="cba1"" type="checkbox" name="ex2a" class="<%= answers.ex2a.class %>"/>
+      <label for="cba2">Option 2</label>
+      <input id="cba2" type="checkbox" name="ex2b" class="<%= answers.ex2b.class %>"/>
+      <label for="cba3">Option 3</label>
+      <input id="cba3" type="checkbox" name="ex2c" class="<%= answers.ex2c.class %>"/>
+    </div>
+    <div>
+      <p>Statement 2</p>
+      <label for="cbb1">Option 1</label>
+      <input id="cbb1"" type="checkbox" name="ex2d" class="<%= answers.ex2d.class %>"/>
+      <label for="cbb2">Option 2</label>
+      <input id="cbb2" type="checkbox" name="ex2e" class="<%= answers.ex2e.class %>"/>
+      <label for="cbb3">Option 3</label>
+      <input id="cbb3" type="checkbox" name="ex2f" class="<%= answers.ex2f.class %>"/>
+    </div>
+    <div>
+      <p>Statement 3</p>
+      <label for="cbc1">Option 1</label>
+      <input id="cbc1"" type="checkbox" name="ex2g" class="<%= answers.ex2g.class %>"/>
+      <label for="cbc2">Option 2</label>
+      <input id="cbc2" type="checkbox" name="ex2h" class="<%= answers.ex2h.class %>"/>
+      <label for="cbc3">Option 3</label>
+      <input id="cbc3" type="checkbox" name="ex2i" class="<%= answers.ex2i.class %>"/>
+    </div>
+    <div>
+      <p>Statement 4</p>
+      <label for="cbd1">Option 1</label>
+      <input id="cbd1"" type="checkbox" name="ex2j" class="<%= answers.ex2j.class %>"/>
+      <label for="cbd2">Option 2</label>
+      <input id="cbd2" type="checkbox" name="ex2k" class="<%= answers.ex2k.class %>"/>
+      <label for="cbd3">Option 3</label>
+      <input id="cbd3" type="checkbox" name="ex2l" class="<%= answers.ex2l.class %>"/>
+    </div>
+    <div>
+      <p>Statement 5</p>
+      <label for="cbe1">Option 1</label>
+      <input id="cbe1"" type="checkbox" name="ex2m" class="<%= answers.ex2m.class %>"/>
+      <label for="cbe2">Option 2</label>
+      <input id="cbe2" type="checkbox" name="ex2n" class="<%= answers.ex2n.class %>"/>
+      <label for="cbe3">Option 3</label>
+      <input id="cbe3" type="checkbox" name="ex2o" class="<%= answers.ex2o.class %>"/>
+    </div>
+  </div>
+
+  <div class="u1exercices match-container">
+    <h3>Exercise 3</h3>
+    <div>
+      <label for="ma1">Item 1</label>
+      <select id="ma1" name="ex3a" class="<%= answers.ex3a.class %>">
+        <option><%= answers.ex3a[answers.ex3a.class] %></option>
+      </select>
+
+      <label for="ma2">Item 2</label>
+      <select id="ma2" name="ex3b" class="<%= answers.ex3b.class %>">
+        <option><%= answers.ex3b[answers.ex3b.class] %></option>
+      </select>
+
+      <label for="ma3">Item 3</label>
+      <select id="ma3" name="ex3c" class="<%= answers.ex3c.class %>">
+        <option><%= answers.ex3c[answers.ex3c.class] %></option>
+      </select>
+
+      <label for="ma4">Item 4</label>
+      <select id="ma4" name="ex3d" class="<%= answers.ex3d.class %>">
+        <option><%= answers.ex3d[answers.ex3d.class] %></option>
+      </select>
+
+      <label for="ma5">Item 5</label>
+      <select for="ma5" name="ex3e" class="<%= answers.ex3e.class %>">
+        <option><%= answers.ex3e[answers.ex3e.class] %></option>
+      </select>
+    </div>
+    <div>
+      <p>Item A</p>
+      <p>Item B</p>
+      <p>Item C</p>
+      <p>Item D</p>
+      <p>Item E</p>
+    </div>
+  </div>
+
+  <div class="u1exercices fill-gaps-container">
+    <h3>Exercise 4</h3>
+    <div>
+      <input type="text" name="ex4a" class="<%= answers.ex4a.class %>" value="<%= answers.ex4a[answers.ex4a.class] %>"/>
+      <input type="text" name="ex4b" class="<%= answers.ex4b.class %>" value="<%= answers.ex4b[answers.ex4b.class] %>"/>
+      <input type="text" name="ex4c" class="<%= answers.ex4c.class %>" value="<%= answers.ex4c[answers.ex4c.class] %>"/>
+    </div>
+    <div>
+      <input type="text" name="ex4d" class="<%= answers.ex4d.class %>" value="<%= answers.ex4d[answers.ex4d.class] %>"/>
+      <input type="text" name="ex4e" class="<%= answers.ex4e.class %>" value="<%= answers.ex4e[answers.ex4e.class] %>"/>
+      <input type="text" name="ex4f" class="<%= answers.ex4f.class %>" value="<%= answers.ex4f[answers.ex4f.class] %>"/>
+    </div>
+    <div>
+      <input type="text" name="ex4g" class="<%= answers.ex4g.class %>" value="<%= answers.ex4g[answers.ex4g.class] %>"/>
+      <input type="text" name="ex4h" class="<%= answers.ex4h.class %>" value="<%= answers.ex4h[answers.ex4h.class] %>"/>
+      <input type="text" name="ex4i" class="<%= answers.ex4i.class %>" value="<%= answers.ex4i[answers.ex4i.class] %>"/>
+      <input type="text" name="ex4j" class="<%= answers.ex4j.class %>" value="<%= answers.ex4j[answers.ex4j.class] %>"/>
+    </div>
+  </div>
+</div>

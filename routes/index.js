@@ -4,7 +4,7 @@ const User = require('../models/user')
 
 // Render index.ejs
 router.get('/', (req, res) => {
-    res.render('index', { user: new User() })
+    res.render('index', { user: req.user })
 })
 
 module.exports = router

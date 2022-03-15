@@ -1,0 +1,149 @@
+<%- include('./_examHeader.ejs') %>
+<h2>Unit 3 Test</h2>
+<%- include('./_exerciseHeader.ejs') %>
+<form action="/exams/three/3" method="post">
+  <div id="exam-three">
+    <div class="u3exercises true-false-container">
+      <h3>Exercise 1</h3>
+      <label for="tf1">Statement 1</label>
+      <select id="tf1" name="ex1a">
+        <option selected value=""></option>
+        <option value="T">T</option>
+        <option value="F">F</option>
+      </select>
+      <label for="tf2">Statement 2</label>
+      <select id="tf2" name="ex1b">
+        <option selected value=""></option>
+        <option value="T">T</option>
+        <option value="F">F</option>
+      </select>
+      <label for="tf3">Statement 3</label>
+      <select id="tf3" name="ex1c">
+        <option selected disabled value=""></option>
+        <option value="T">T</option>
+        <option value="F">F</option>
+      </select>
+      <label for="tf4">Statement 4</label>
+      <select id="tf4" name="ex1d">
+        <option selected value=""></option>
+        <option value="T">T</option>
+        <option value="F">F</option>
+      </select>
+      <label for="tf5">Statement 5</label>
+      <select id="tf5" name="ex1e">
+        <option selected value=""></option>
+        <option value="T">T</option>
+        <option value="F">F</option>
+      </select>
+    </div>
+
+    <div class="u3exercises select-one-container">
+      <h3>Exercise 2</h3>
+      <div>
+        <p>Statement 1</p>
+        <label for="rba1">Option 1</label>
+        <input id="rba1"" type="radio" name="ex2a" />
+        <label for="rba2">Option 2</label>
+        <input id="rba2" type="radio" name="ex2a" />
+        <label for="rba3">Option 3</label>
+        <input id="rba3" type="radio" name="ex2a" />
+      </div>
+      <div>
+        <p>Statement 2</p>
+        <label for="rbb1">Option 1</label>
+        <input id="rbb1" type="radio" name="ex2b" />
+        <label for="rbb2">Option 2</label>
+        <input id="rbb2" type="radio" name="ex2b" />
+        <label for="rbb3">Option 3</label>
+        <input id="rbb3" type="radio" name="ex2b" />
+      </div>
+      <div>
+        <p>Statement 3</p>
+        <label for="rbc1">Option 1</label>
+        <input id="rbc1" type="radio" name="ex2c" />
+        <label for="rbc2">Option 2</label>
+        <input id="rbc2" type="radio" name="ex2c" />
+        <label for="rbc3">Option 3</label>
+        <input id="rbc3" type="radio" name="ex2c" />
+      </div>
+      <div>
+        <p>Statement 4</p>
+        <label for="rbd1">Option 1</label>
+        <input id="rbd1" type="radio" name="ex2d" />
+        <label for="rbd2">Option 2</label>
+        <input id="rbd2" type="radio" name="ex2d" />
+        <label for="rbd3">Option 3</label>
+        <input id="rbd3" type="radio" name="ex2d" />
+      </div>
+      <div>
+        <p>Statement 5</p>
+        <label for="rbe1">Option 1</label>
+        <input id="rbe1" type="radio" name="ex2e" />
+        <label for="rbe2">Option 2</label>
+        <input id="rbe2" type="radio" name="ex2e" />
+        <label for="rbe2">Option 3</label>
+        <input id="rbe3" type="radio" name="ex2e" />
+      </div>
+    </div>
+
+    <div class="u3exercises match-container">
+      <h3>Exercise 3</h3>
+      <select name="ex3a" id="">
+        <option value="">A</option>
+        <option value="">B</option>
+        <option value="">C</option>
+        <option value="">D</option>
+        <option value="">E</option>
+      </select>
+      <select name="ex3b" id="">
+        <option value="">A</option>
+        <option value="">B</option>
+        <option value="">C</option>
+        <option value="">D</option>
+        <option value="">E</option>
+      </select>
+      <select name="ex3c" id="">
+        <option value="">A</option>
+        <option value="">B</option>
+        <option value="">C</option>
+        <option value="">D</option>
+        <option value="">E</option>
+      </select>
+      <select name="ex3d" id="">
+        <option value="">A</option>
+        <option value="">B</option>
+        <option value="">C</option>
+        <option value="">D</option>
+        <option value="">E</option>
+      </select>
+      <select name="ex3e" id="">
+        <option value="">A</option>
+        <option value="">B</option>
+        <option value="">C</option>
+        <option value="">D</option>
+        <option value="">E</option>
+      </select>
+    </div>
+
+    <div class="u3exercises fill-gaps-container">
+      <h3>Exercise 4</h3>
+      <div>
+        <input type="text" name="ex4a" id="" />
+        <input type="text" name="ex4b" id="" />
+        <input type="text" name="ex4c" id="" />
+      </div>
+      <div>
+        <input type="text" name="ex4d" id="" />
+        <input type="text" name="ex4e" id="" />
+        <input type="text" name="ex4f" id="" />
+      </div>
+      <div>
+        <input type="text" name="ex4g" id="" />
+        <input type="text" name="ex4h" id="" />
+        <input type="text" name="ex4i" id="" />
+        <input type="text" name="ex4j" id="" />
+      </div>
+    </div>
+  </div>
+  <button type="submit" id="submit-exam-btn">Submit</button>
+</form>
