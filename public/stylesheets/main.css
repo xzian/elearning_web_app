@@ -1,19 +1,24 @@
 @import "shared/fonts.css";
-@import "shared/variables.css";
-@import "shared/main-header.css";
-@import "shared/exercise-header.css";
-@import "shared/exercises.css";
+@import "shared/color-variables.css";
+@import "shared/header.css";
+@import "shared/content.css";
+@import "shared/sign.css";
 @import "shared/results.css";
 
 html {
-  min-width: 400px;
-  /*background-image: linear-gradient(
+  background-image: linear-gradient(
     to right,
-    var(--color-background-dark),
-    var(--color-background-light)
-  );*/
+    var(--color-background-dark) 25%,
+    var(--color-background-light) 95%
+  );
+}
+
+.container {
+  min-width: 20rem;
 }
 
 .inner-container {
-  margin: 3rem 3rem;
+  display: grid;
+  place-items: center;
+  padding: 1rem 1rem;
 }

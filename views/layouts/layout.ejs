@@ -6,16 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="/scripts/switch-exercise-tab.js" defer></script>
     <script src="/scripts/results-highlighting.js" defer></script>
+    <script src="/scripts/dropdown-action.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/stylesheets/main.css" />
     <title>Document</title>
   </head>
   <body>
-    <%- include('../partials/header.ejs') %> 
-    <%- include('../partials/userLogging.ejs') %> 
-    <%- include('../partials/errorMessage.ejs') %> 
-    <%- include('../partials/successfulLogin.ejs') %> 
-    <div class="inner-container">
-        <%- body %>
+    <div class="container">
+      <%- include('../partials/header.ejs') %> <%-
+      include('../partials/errorMessage.ejs') %> <%-
+      include('../partials/successfulLogin.ejs') %>
+      <div class="inner-container"><%- body %></div>
     </div>
   </body>
 </html>

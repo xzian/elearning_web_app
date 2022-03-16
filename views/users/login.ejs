@@ -1,7 +1,15 @@
-<h2>Login</h2>
-<form action="/users/login" method="POST">
-    <%- include('_lr_form_fields') %> 
-    <button type="submit">Login</button>
-</form>
-<a href="/">Cancel</a>
-<a href="/users/register">Register</a>
+<h2 class="generic-heading">Login</h2>
+<div class="content-container sign-form">
+  <form id="login-form" action="/users/login" method="POST">
+    <%- include('_lr_form_fields') %>
+  </form>
+  <ul>
+    <li>
+      <span>
+        <a href="/">Cancel</a>
+        <button form="login-form" type="submit">Login</button>
+      </span>
+    </li>
+    <li><a href="/users/register">Don't have an account?</a></li>
+  </ul>
+</div>

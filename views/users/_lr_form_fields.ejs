@@ -1,4 +1,13 @@
-<label>Email</label>
-<input type="text" name="email" value="<%= user.email %>">
-<label>Password</label>
-<input type="text" name="password" value="<%= user.password %>">
+<div>
+  <label for="li-email">Email</label>
+  <input id="li-email" type="email" name="email" value="<%= user.email %>" />
+</div>
+<div>
+  <label for="li-password">Password</label>
+  <input
+    id="li-password"
+    type="password"
+    name="password"
+    value="<%= user.password %>"
+  />
+</div>

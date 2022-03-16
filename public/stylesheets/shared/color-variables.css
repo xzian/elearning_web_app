@@ -1,0 +1,7 @@
+:root {
+  --color-theme: 210;
+  --color-background-dark: hsl(var(--color-theme), 100%, 20%);
+  --color-background-light: hsl(var(--color-theme), 100%, 55%);
+  --color-content-background: hsl(var(--color-theme), 100%, 95%);
+  --color-content-background-dark: hsl(var(--color-theme), 100%, 40%);
+}

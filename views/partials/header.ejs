@@ -2,9 +2,21 @@
   <nav class="header-nav">
     <a class="header-title" href="/">E-Learning App</a>
     <ul>
-      <li><a href="/studying_material">Studying Material</a></li>
-      <li><a href="/exams">Tests</a></li>
-      <li><a href="/users/profile">My Stats</a></li>
+      <li><a href="/studying_material">Study</a></li>
+      <li>
+        <div class="dropdown" data-dropdown>
+          <button class="link" data-dropdown-button>Tests</button>
+          <div class="dropdown-menu">
+            <div class="dropdown-links">
+              <a href="/exams/one" id="exam-one-btn">Unit 1 test</a>
+              <a href="/exams/two" id="exam-two-btn">Unit 2 test</a>
+              <a href="/exams/three" id="exam-three-btn">Unit 3 test</a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li><a href="/users/profile">Profile</a></li>
     </ul>
   </nav>
+  <nav class="header-nav"><%- include('../partials/userLogging.ejs') %></nav>
 </header>
