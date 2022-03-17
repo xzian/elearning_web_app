@@ -1,0 +1,65 @@
+h2,
+h3 {
+  font-family: "Gotham Rounded";
+}
+
+h2 {
+  color: var(--color-text-light);
+}
+
+h3 {
+  color: black;
+}
+
+.exercise-header-nav ul {
+  padding-left: 0;
+}
+
+.exercise-header-nav li {
+  list-style: none;
+}
+
+.exercise-header-nav button {
+  background: none;
+  border: none;
+  color: var(--color-text-light);
+  font-family: "Gotham Rounded";
+  font-size: inherit;
+}
+
+@media (min-width: 24rem) {
+  .exercise-header-nav ul {
+    display: flex;
+  }
+}
+
+.true-false-container div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.true-false-container div label {
+  margin-right: 1rem;
+}
+
+.multiple-choice-container div {
+  display: flex;
+  justify-content: center;
+  margin-right: 1rem;
+}
+
+@media (max-width: 24rem) {
+  .multiple-choice-container > div {
+    flex-direction: column;
+  }
+}
+
+.match-container > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mc-item {
+  margin-right: 1rem;
+}

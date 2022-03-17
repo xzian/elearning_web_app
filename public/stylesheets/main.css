@@ -1,2 +1,26 @@
+@import "shared/fonts.css";
+@import "shared/color-variables.css";
+@import "shared/header.css";
+@import "shared/content.css";
 @import "shared/exercises.css";
 @import "shared/results.css";
+@import "shared/sign.css";
+@import "shared/results.css";
+
+html {
+  background-image: linear-gradient(
+    to right,
+    var(--color-background-dark) 25%,
+    var(--color-background-light) 95%
+  );
+}
+
+.container {
+  min-width: 20rem;
+}
+
+.inner-container {
+  display: grid;
+  place-items: center;
+  padding: 1rem 1rem;
+}

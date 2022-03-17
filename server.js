@@ -1,62 +1,64 @@
 // Development stuff
-if (process.env.NODE_ENV !== 'production') {
-    require('dotenv').config()
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
 }
 
 // Express server setup
-const express = require('express')
-const expressLayouts = require('express-ejs-layouts')
-const session = require('express-session')
-const app = express()
+const express = require("express");
+const expressLayouts = require("express-ejs-layouts");
+const session = require("express-session");
+const app = express();
 
 // Post request processing
-const bodyParser = require('body-parser')
+const bodyParser = require("body-parser");
 
 // Route files
-const indexRouter = require('./routes/index')
-const usersRouter = require('./routes/users')
-const studyingMaterialRouter = require('./routes/studying_material')
-const testsRouter = require('./routes/exams')
+const indexRouter = require("./routes/index");
+const usersRouter = require("./routes/users");
+const studyingMaterialRouter = require("./routes/studying_material");
+const testsRouter = require("./routes/exams");
 
 // Session setup
-const MongoStore = require('connect-mongo')//.default
+const MongoStore = require("connect-mongo"); //.default
 const sessionStore = MongoStore.create({
-    mongoUrl: process.env.DATABASE_URL,
-    collection: 'sessions'
-})
+  mongoUrl: process.env.DATABASE_URL,
+  collection: "sessions",
+});
 
-app.use(session({
+app.use(
+  session({
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
     store: sessionStore,
     cookie: {
-        maxAge: 24 * 60 * 60 * 1000 // 1 day
-    }
-}))
+      maxAge: 24 * 60 * 60 * 1000, // 1 day
+    },
+  })
+);
 
 // Passport setup
-const passport = require('passport')
-require('./config/passport')
-app.use(passport.initialize())
-app.use(passport.session())
+const passport = require("passport");
+require("./config/passport");
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Logging out
-const methodOverride = require('method-override')
-app.use(methodOverride('_method'))
+const methodOverride = require("method-override");
+app.use(methodOverride("_method"));
 
 // Views setup
-app.set('view engine', 'ejs')
-app.set('views', __dirname + '/views')
-app.set('layout', 'layouts/layout')
-app.use(expressLayouts)
-app.use(express.static('public'))
-app.use(bodyParser.urlencoded({ extended: true }))
+app.set("view engine", "ejs");
+app.set("views", __dirname + "/views");
+app.set("layout", "layouts/layout");
+app.use(expressLayouts);
+app.use(express.static("public"));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Route links
-app.use('/', indexRouter)
-app.use('/users', usersRouter)
-app.use('/studying_material', studyingMaterialRouter)
-app.use('/exams', testsRouter)
+app.use("/", indexRouter);
+app.use("/users", usersRouter);
+app.use("/studying_material", studyingMaterialRouter);
+app.use("/exams", testsRouter);
 
-app.listen(process.env.PORT || 3000)
+app.listen(process.env.PORT || 3000);

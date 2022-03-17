@@ -1,9 +1,19 @@
-<h2>Register</h2>
-<form action="/users/register" method="POST">
-    <label>Username</label>
-    <input type="text" name="username" value="<%= user.username %>">
-    <%- include('_lr_form_fields') %> 
-    <button type="submit">Register</button>
-</form>
-<a href="/">Cancel</a>
-<a href="/users/Login">Login</a>
+<h2 class="generic-heading">Register</h2>
+<div class="content-container sign-form">
+  <form id="register-form" action="/users/register" method="POST">
+    <div>
+      <label>Username</label>
+      <input type="text" name="username" value="<%= user.username %>" />
+    </div>
+    <%- include('_lr_form_fields') %>
+  </form>
+  <ul>
+    <li>
+      <span>
+        <a href="/">Cancel</a>
+        <button form="register" type="submit">Register</button>
+      </span>
+    </li>
+    <li><a href="/users/Login">Already have an account?</a></li>
+  </ul>
+</div>

@@ -1,0 +1,87 @@
+:root {
+  --color-text-light: hsl(var(--color-theme), 100%, 85%);
+}
+
+header {
+  font-family: "Gotham Rounded";
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-nav ul {
+  display: flex;
+  padding-left: 0;
+  margin-top: 0rem;
+}
+
+.header-nav li {
+  list-style: none;
+  margin-right: 0.5rem;
+}
+
+.header-nav a {
+  text-decoration: none;
+  color: var(--color-text-light);
+}
+
+.header-nav form button {
+  font-family: inherit;
+  font-size: inherit;
+  background: none;
+}
+
+@media (max-width: 23.5rem) {
+  .header-nav .sign-links {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.header-title {
+  font-size: 1.75rem;
+  font-weight: 900;
+}
+
+.dropdown.active > .link,
+.link:hover,
+.header-nav a:hover {
+  color: white;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.link {
+  background: none;
+  border: none;
+  color: var(--color-text-light);
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.dropdown-menu {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 0.25rem);
+  min-width: 10ch;
+  background-color: var(--color-background-dark);
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+}
+
+.dropdown.active > .link + .dropdown-menu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropdown-links {
+  display: grid;
+  gap: 0.25rem;
+}

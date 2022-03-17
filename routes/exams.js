@@ -1,75 +1,65 @@
 const compareAnswers = require("../config/utils").compareAnswers;
 const saveResult = require("../config/utils").saveResult;
-const { request } = require("express");
 const express = require("express");
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.render("exams/index", { user: req.user });
-});
-
 router
   .route("/one")
-  .get((req, res) => {
+  .get(checkAuthenticated, (req, res) => {
     res.render("exams/one", { user: req.user });
   })
-  .post((req, res) => {
-    res.redirect("/exams/one");
+  .post(processSubmission, (req, res) => {
+    res.redirect("/exams/one/results");
   });
 
 router
   .route("/two")
-  .get((req, res) => {
+  .get(checkAuthenticated, (req, res) => {
     res.render("exams/two", { user: req.user });
   })
-  .post((req, res) => {
-    res.redirect("/exams/two");
+  .post(processSubmission, (req, res) => {
+    res.redirect("/exams/two/results");
   });
 
 router
   .route("/three")
-  .get((req, res) => {
+  .get(checkAuthenticated, (req, res) => {
     res.render("exams/three", { user: req.user });
   })
-  .post((req, res) => {
-    res.redirect("/exams/three");
+  .post(processSubmission, (req, res) => {
+    res.redirect("/exams/three/results");
   });
 
-router.route("/one/results").get((req, res) => {
+router.get("/one/results", checkAuthenticated, (req, res) => {
   res.render("exams/one/results", { user: req.user });
 });
 
-router.route("/one/:exercise").post(async (req, res) => {
-  const unit = "one";
-  const userAnswers = req.body;
-
-  const examResults = await compareAnswers({
-    unit: unit,
-    submitted: userAnswers,
-  });
-  await saveResult({ userId: req.user.id, results: examResults });
-  console.log(userAnswers);
-  console.log(examResults);
-
-  res.redirect("/exams/one/results");
+router.get("/two/results", checkAuthenticated, (req, res) => {
+  res.render("exams/two/results", { user: req.user });
 });
 
-router.route("/two/:exercise").post(async (req, res) => {
-  const unit = "two";
-  const userAnswers = req.body;
-
-  const results = await compareAnswers({ unit: unit, submitted: userAnswers });
-
-  res.redirect("/exams/two");
+router.get("/three/results", checkAuthenticated, (req, res) => {
+  res.render("exams/two/results", { user: req.user });
 });
 
-router.route("/three/:exercise").post(async (req, res) => {
-  const unit = "three";
-  const userAnswers = req.body;
+function checkAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
+  }
+  return res.redirect("/");
+}
 
-  const results = await compareAnswers({ unit: unit, submitted: userAnswers });
-
-  res.redirect("/exams/three");
-});
+async function processSubmission(req, res, next) {
+  if (req.originalUrl.split("/")[2]) {
+    const examResults = await compareAnswers({
+      unit: req.originalUrl.split("/")[2],
+      submitted: req.body,
+    });
+    await saveResult({ userId: req.user.id, results: examResults });
+    return next();
+  } else {
+    return res.redirect("/");
+  }
+}
 
 module.exports = router;

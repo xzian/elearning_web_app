@@ -1,9 +1,9 @@
-<h2>Unit 1 Test</h2>
+<h2>Unit 3 Test</h2>
 <%- include('../_exerciseHeader.ejs') %>
 <div class="exam content-container">
-  <form class="exam-form" id="form-one" action="/exams/one" method="post">
-    <div id="exam-one" class="exam-container">
-      <div class="u1exercices true-false-container">
+  <form class="exam-form" id="form-three" action="/exams/three" method="post">
+    <div id="exam-three" class="exam-container">
+      <div class="u3exercises true-false-container">
         <h3>Exercise 1</h3>
         <div>
           <label for="tf1">Lorem ipsum dolor sit amet consectetur.</label>
@@ -53,7 +53,7 @@
         </div>
       </div>
 
-      <div class="u1exercices multiple-choice-container">
+      <div class="u3exercises select-one-container">
         <h3>Exercise 2</h3>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem,
@@ -137,7 +137,7 @@
         </div>
       </div>
 
-      <div class="u1exercices match-container">
+      <div class="u3exercises match-container">
         <h3>Exercise 3</h3>
         <div>
           <div class="mc-item">
@@ -211,7 +211,7 @@
         </div>
       </div>
 
-      <div class="u1exercices fill-gaps-container">
+      <div class="u3exercises fill-gaps-container">
         <h3>Exercise 4</h3>
         <div>
           <input type="text" name="ex4a" />
@@ -231,13 +231,6 @@
         </div>
       </div>
     </div>
+    <button type="submit" id="submit-exam-btn">Submit</button>
   </form>
-  <button
-    class="submit-exam"
-    type="submit"
-    form="form-one"
-    id="submit-exam-btn"
-  >
-    Submit
-  </button>
 </div>

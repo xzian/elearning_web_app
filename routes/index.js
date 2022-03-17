@@ -1,10 +1,9 @@
-const express = require('express')
-const router = express.Router()
-const User = require('../models/user')
+const express = require("express");
+const router = express.Router();
 
 // Render index.ejs
-router.get('/', (req, res) => {
-    res.render('index', { user: req.user })
-})
+router.get("/", (req, res) => {
+  res.render("index", { user: req.user });
+});
 
-module.exports = router
+module.exports = router;

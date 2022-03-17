@@ -1,0 +1,50 @@
+.generic-heading {
+  font-family: "Gotham Rounded";
+  color: var(--color-text-light);
+}
+
+.content-container ul {
+  display: grid;
+  place-items: center;
+  padding-left: 0;
+}
+
+.content-container ul :nth-child(1) {
+  margin-bottom: 1rem;
+}
+
+.content-container li {
+  list-style: none;
+}
+
+.content-container li a {
+  text-decoration: none;
+  color: black;
+}
+
+.sign-form {
+  font-family: "Gotham Rounded";
+}
+
+.sign-form button[type="submit"] {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.sign-form div label {
+  margin-right: 1rem;
+}
+
+.sign-form div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 24rem) {
+  .sign-form div {
+    flex-direction: column;
+  }
+}

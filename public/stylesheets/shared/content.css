@@ -1,0 +1,14 @@
+.content-container {
+  font-family: "Roboto", sans-serif;
+}
+
+.content-container {
+  background-color: var(--color-content-background);
+  padding: 1rem 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.content-container p {
+  max-width: 79ch;
+}

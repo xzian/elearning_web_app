@@ -1,7 +1,8 @@
-const mongoose = require("mongoose");
 const Answer = require("../models/answer");
 const User = require("../models/user");
 
+// Compare submitted answers with the solutions in the database,
+// then return some statistic results
 async function compareAnswers(submittedAnswers) {
   const solutionDocument = await Answer.findOne({
     unit: submittedAnswers.unit,
@@ -39,11 +40,6 @@ async function compareAnswers(submittedAnswers) {
   let unansweredCount =
     Object.keys(solutionDocument.solutions).length - submittedCount;
 
-  //console.log(`Submitted Answers: ${submittedCount}`);
-  //console.log(`Correct Answers: ${correctCount}`);
-  //console.log(`Incorrect Answers: ${incorrectCount}`);
-  //console.log(`Unanswered: ${unansweredCount}`);
-
   return {
     unit: submittedAnswers.unit,
     submitted: submittedCount,
@@ -54,6 +50,7 @@ async function compareAnswers(submittedAnswers) {
   };
 }
 
+// Save the results in the database
 async function saveResult(exams) {
   const found = await User.find({
     _id: exams.userId,
