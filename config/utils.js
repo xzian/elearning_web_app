@@ -1,4 +1,3 @@
-const mongoose = require("mongoose");
 const Answer = require("../models/answer");
 const User = require("../models/user");
 
@@ -38,11 +37,6 @@ async function compareAnswers(submittedAnswers) {
   }
   let unansweredCount =
     Object.keys(solutionDocument.solutions).length - submittedCount;
-
-  //console.log(`Submitted Answers: ${submittedCount}`);
-  //console.log(`Correct Answers: ${correctCount}`);
-  //console.log(`Incorrect Answers: ${incorrectCount}`);
-  //console.log(`Unanswered: ${unansweredCount}`);
 
   return {
     unit: submittedAnswers.unit,
