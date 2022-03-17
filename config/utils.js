@@ -1,6 +1,8 @@
 const Answer = require("../models/answer");
 const User = require("../models/user");
 
+// Compare submitted answers with the solutions in the database,
+// then return some statistic results
 async function compareAnswers(submittedAnswers) {
   const solutionDocument = await Answer.findOne({
     unit: submittedAnswers.unit,
@@ -48,6 +50,7 @@ async function compareAnswers(submittedAnswers) {
   };
 }
 
+// Save the results in the database
 async function saveResult(exams) {
   const found = await User.find({
     _id: exams.userId,

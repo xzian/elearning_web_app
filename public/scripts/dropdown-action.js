@@ -1,3 +1,5 @@
+// [UI] Enable and disable highlighting of clicked buttons
+// in the dropdown menu
 document.addEventListener("click", (e) => {
   const isDropdownButton = e.target.matches("[data-dropdown-button]");
   if (!isDropdownButton && e.target.closest("[data-dropdown]") != null) return;

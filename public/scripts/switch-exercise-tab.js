@@ -1,3 +1,4 @@
+// Exercise switching
 var url = window.location.pathname;
 
 const submitExamBtn = document.getElementById("submit-exam-btn");

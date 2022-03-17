@@ -1,9 +1,9 @@
+const User = require("../models/user");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
-const connection = require("./database");
-const User = require("../models/user");
 const validatePassword = require("../lib/passwordUtils").validatePassword;
 
+// Find user and verify credentials in the database
 const verifyCallback = (email, password, done) => {
   User.findOne({ email: email })
     .then(async (user) => {

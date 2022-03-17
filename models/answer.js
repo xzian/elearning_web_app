@@ -1,4 +1,3 @@
-const connection = require("../config/database");
 const mongoose = require("mongoose");
 
 const answerSchema = new mongoose.Schema({
