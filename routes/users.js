@@ -1,19 +1,18 @@
 const express = require("express");
 const router = express.Router();
 // Password hashing
-const bcrypt = require("bcrypt");
 const genPassword = require("../lib/passwordUtils").genPassword;
 // Passport authentication
 const passport = require("passport");
 require("../config/passport");
 // Database access (User collection)
-const mongoose = require("mongoose");
-const connection = require("../config/database");
+require("../config/database");
 const User = require("../models/user");
 
 // Get the login route and access to the input data
 router.get("/login", (req, res) => {
-  res.render("users/login", { user: new User() });
+  const errors = req.flash().error;
+  res.render("users/login", { user: new User(), errors });
 });
 
 // Get the registration route and
@@ -35,7 +34,8 @@ router.post(
   "/login",
   passport.authenticate("local", {
     successRedirect: "/users/profile",
-    failureRedirect: "/users/login-failure",
+    failureRedirect: "/users/login",
+    failureFlash: true,
   })
 );
 
@@ -56,12 +56,15 @@ router.post("/register", async (req, res) => {
   });
 
   try {
-    const newUser = await user.save();
+    await user.save();
     res.redirect("/users/login");
   } catch (e) {
     res.render("users/register", {
       user: user,
-      errorMessage: `Error creating account: ${e}`,
+      errorMessage: {
+        what: "Your account could not be registered.",
+        help: "Make sure to fill in both your username, email and password.",
+      },
     });
   }
 });

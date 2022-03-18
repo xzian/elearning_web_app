@@ -9,6 +9,10 @@ const expressLayouts = require("express-ejs-layouts");
 const session = require("express-session");
 const app = express();
 
+// Message flashing
+const flash = require("connect-flash");
+app.use(flash());
+
 // Post request processing
 const bodyParser = require("body-parser");
 

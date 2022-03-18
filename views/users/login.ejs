@@ -13,3 +13,10 @@
     <li><a href="/users/register">Don't have an account?</a></li>
   </ul>
 </div>
+
+<% if (errors) { %>
+<h2 class="error-message-heading">Error</h2>
+<div class="error-message-container">
+  <h4><%= errors %></h4>
+</div>
+<% } %>

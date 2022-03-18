@@ -1,6 +1,7 @@
 @import "shared/fonts.css";
 @import "shared/color-variables.css";
 @import "shared/header.css";
+@import "shared/errors.css";
 @import "shared/content.css";
 @import "shared/exercises.css";
 @import "shared/results.css";

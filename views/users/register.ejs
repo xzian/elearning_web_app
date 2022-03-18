@@ -17,3 +17,11 @@
     <li><a href="/users/Login">Already have an account?</a></li>
   </ul>
 </div>
+
+<% if (locals.errorMessage) { %>
+<h2 class="error-message-heading">Error</h2>
+<div class="error-message-container">
+  <h4><%= errorMessage.what %></h4>
+  <p><%= errorMessage.help %></p>
+</div>
+<% } %>
