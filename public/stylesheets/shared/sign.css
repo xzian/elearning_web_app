@@ -3,7 +3,7 @@
   color: var(--color-text-light);
 }
 
-.content-container ul {
+.content-container > ul {
   display: grid;
   place-items: center;
   padding-left: 0;
@@ -15,11 +15,6 @@
 
 .content-container li {
   list-style: none;
-}
-
-.content-container li a {
-  text-decoration: none;
-  color: black;
 }
 
 .sign-form {
@@ -47,4 +42,14 @@
   .sign-form div {
     flex-direction: column;
   }
+}
+
+.sign-suggestion {
+  text-decoration: none;
+  color: orangered;
+}
+
+.cancel-btn {
+  text-decoration: none;
+  color: red;
 }

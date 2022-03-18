@@ -21,6 +21,7 @@ html {
 }
 
 .inner-container {
+  margin-top: 8rem;
   display: grid;
   place-items: center;
   padding: 1rem 1rem;

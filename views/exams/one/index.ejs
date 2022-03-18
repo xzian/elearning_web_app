@@ -1,9 +1,9 @@
 <h2>Unit 1 Test</h2>
 <%- include('../_exerciseHeader.ejs') %>
-<div class="exam content-container">
-  <form class="exam-form" id="form-one" action="/exams/one" method="post">
+<div class="content-container">
+  <form id="exam-form" action="/exams/one" method="post">
     <div id="exam-one" class="exam-container">
-      <div class="u1exercices true-false-container">
+      <div class="true-false-container">
         <h3>Exercise 1</h3>
         <div>
           <label for="tf1">Lorem ipsum dolor sit amet consectetur.</label>
@@ -53,7 +53,7 @@
         </div>
       </div>
 
-      <div class="u1exercices multiple-choice-container">
+      <div class="multiple-choice-container">
         <h3>Exercise 2</h3>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem,
@@ -137,7 +137,7 @@
         </div>
       </div>
 
-      <div class="u1exercices match-container">
+      <div class="match-container">
         <h3>Exercise 3</h3>
         <div>
           <div class="mc-item">
@@ -211,7 +211,7 @@
         </div>
       </div>
 
-      <div class="u1exercices fill-gaps-container">
+      <div class="fill-gaps-container">
         <h3>Exercise 4</h3>
         <div>
           <input type="text" name="ex4a" />
@@ -235,7 +235,7 @@
   <button
     class="submit-exam"
     type="submit"
-    form="form-one"
+    form="exam-form"
     id="submit-exam-btn"
   >
     Submit

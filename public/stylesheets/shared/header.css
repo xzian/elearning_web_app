@@ -1,4 +1,6 @@
 :root {
+  --color-background-header: hsl(var(--color-theme), 100%, 85%);
+  --color-text-header: hsl(var(--color-theme), 100%, 25%);
   --color-text-light: hsl(var(--color-theme), 100%, 85%);
 }
 
@@ -6,6 +8,20 @@ header {
   font-family: "Gotham Rounded";
   display: flex;
   justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 1rem;
+  background-color: var(--color-background-header);
+}
+
+header > :nth-child(1) {
+  margin-left: 1rem;
+}
+
+header > :nth-child(2) {
+  margin-right: 1rem;
 }
 
 .header-nav ul {
@@ -21,16 +37,18 @@ header {
 
 .header-nav a {
   text-decoration: none;
-  color: var(--color-text-light);
+  color: var(--color-text-header);
 }
 
-.header-nav form button {
+.log-out-btn {
   font-family: inherit;
   font-size: inherit;
+  color: var(--color-text-header);
   background: none;
+  border: none;
 }
 
-@media (max-width: 23.5rem) {
+@media (max-width: 25rem) {
   .header-nav .sign-links {
     display: flex;
     flex-direction: column;
@@ -44,7 +62,8 @@ header {
 
 .dropdown.active > .link,
 .link:hover,
-.header-nav a:hover {
+.header-nav a:hover,
+.log-out-btn:hover {
   color: white;
 }
 
@@ -55,7 +74,7 @@ header {
 .link {
   background: none;
   border: none;
-  color: var(--color-text-light);
+  color: var(--color-text-header);
   font-family: inherit;
   font-size: inherit;
 }
@@ -65,9 +84,9 @@ header {
   left: 0;
   top: calc(100% + 0.25rem);
   min-width: 10ch;
-  background-color: var(--color-background-dark);
+  background-color: var(--color-background-header);
   border-radius: 0.25rem;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
   padding: 0.5rem;
   opacity: 0;
   pointer-events: none;
