@@ -1,5 +1,6 @@
 const Answer = require("../models/answer");
 const User = require("../models/user");
+const Task = require("../models/task");
 
 // Compare submitted answers with the solutions in the database,
 // then return some statistic results
@@ -75,5 +76,10 @@ async function saveResult(exams) {
   );
 }
 
+async function loadExamTasks(unit) {
+  return await Task.findOne({ unit: unit });
+}
+
 module.exports.compareAnswers = compareAnswers;
 module.exports.saveResult = saveResult;
+module.exports.loadExamTasks = loadExamTasks;

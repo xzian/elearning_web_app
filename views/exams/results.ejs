@@ -1,10 +1,11 @@
-<% var answers; 
-   for (let i = 0; i < user.exams.length; i++) { 
-     if (user.exams[i].unit == "one") { 
-       answers = user.exams[i].answers; 
-       break; 
-       } 
-    } 
+<% 
+var answers; 
+for (let i = 0; i < user.exams.length; i++) { 
+  if (user.exams[i].unit == unitStr) { 
+    answers = user.exams[i].answers; 
+    break; 
+  }
+} 
 %>
 <div class="exam-container">
   <div class="content-container u1exercices true-false-container">
