@@ -1,25 +1,45 @@
-<h2 class="generic-heading">Register</h2>
-<div class="content-container sign-form">
-  <form id="register-form" action="/users/register" method="POST">
-    <div>
-      <label>Username</label>
-      <input type="text" name="username" value="<%= user.username %>" />
+<div class="sign-grid">
+  <h2>Sign up</h2>
+  <form
+    class="grid-col-span-2"
+    id="register-form"
+    action="/users/register"
+    method="POST"
+  >
+    <div class="sign-in-grid">
+      <input
+        class="credential-input grid-col-span-2"
+        id="username"
+        type="text"
+        name="username"
+        placeholder="Enter your username"
+        value="<%= user.username %>"
+      />
+      <input
+        class="credential-input grid-col-span-2"
+        id="email"
+        type="email"
+        name="email"
+        placeholder="Enter your email"
+        value="<%= user.email %>"
+      />
+      <input
+        class="credential-input grid-col-span-2"
+        id="passwd"
+        type="password"
+        name="password"
+        placeholder="Enter your password"
+        value="<%= user.password %>"
+      />
     </div>
-    <%- include('_lr_form_fields') %>
   </form>
-  <ul>
-    <li>
-      <span>
-        <a href="/" class="cancel-btn">Cancel</a>
-        <button form="register-form" type="submit">Register</button>
-      </span>
-    </li>
-    <li>
-      <a href="/users/Login" class="sign-suggestion"
-        >Already have an account?</a
-      >
-    </li>
-  </ul>
+  <a href="/" class="cancel-btn">Cancel</a>
+  <button class="sign-submit-btn" form="register-form" type="submit">
+    Register
+  </button>
+  <a href="/users/Login" class="sign-suggestion grid-col-span-2"
+    >Already have an account?</a
+  >
 </div>
 
 <% if (locals.errorMessage) { %>

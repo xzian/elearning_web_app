@@ -1,55 +1,83 @@
-.generic-heading {
+.sign-grid * {
   font-family: "Gotham Rounded";
-  color: var(--color-text-light);
 }
 
-.content-container > ul {
+.sign-grid {
   display: grid;
-  place-items: center;
-  padding-left: 0;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: #eee;
+  border-radius: 0.5rem;
+  padding: 2rem;
 }
 
-.content-container ul :nth-child(1) {
-  margin-bottom: 1rem;
+.grid-col-span-2 {
+  grid-column: span 2;
 }
 
-.content-container li {
-  list-style: none;
+.grid-row-span-2 {
+  grid-row: span 2;
 }
 
-.sign-form {
-  font-family: "Gotham Rounded";
+.sign-in-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
 }
 
-.sign-form button[type="submit"] {
-  background: none;
-  border: none;
-  font-family: inherit;
-  font-size: inherit;
-}
-
-.sign-form div label {
-  margin-right: 1rem;
-}
-
-.sign-form div {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-}
-
-@media (max-width: 24rem) {
-  .sign-form div {
-    flex-direction: column;
-  }
-}
-
-.sign-suggestion {
+.sign-grid a {
   text-decoration: none;
-  color: orangered;
+}
+
+:is(.sign-suggestion, .sign-submit-btn, .cancel-btn) {
+  text-align: center;
+  font-size: 1.5rem;
+  min-width: 100%;
+  font-style: inherit;
+  margin: 0 auto;
+  padding: 0 0.25rem;
+  border-radius: 0.25rem;
+  border: 2px solid transparent;
+  color: white;
+  transition: background-color 150ms ease-in-out, border 150ms ease-in-out;
+}
+
+:is(.sign-suggestion, .sign-submit-btn, .cancel-btn):hover {
+  background-color: white;
+}
+
+:is(.sign-suggestion, .sign-submit-btn) {
+  background-color: var(--bg-contrast);
+}
+
+:is(.sign-suggestion, .sign-submit-btn):hover {
+  color: var(--bg-contrast);
+  border-color: var(--bg-contrast);
+}
+
+:is(.sign-suggestion, .sign-submit-btn):active {
+  border-color: lime;
+  color: lime;
 }
 
 .cancel-btn {
-  text-decoration: none;
+  background-color: red;
+}
+
+.cancel-btn:hover {
   color: red;
+  border-color: red;
+}
+
+.credential-input {
+  font-size: inherit;
+  border: 5px solid transparent;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background-color: #ddd;
+}
+
+.credential-input:focus {
+  outline: none;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.25);
 }

@@ -1,21 +1,37 @@
-<h2 class="generic-heading">Login</h2>
-<div class="content-container sign-form">
-  <form id="login-form" action="/users/login" method="POST">
-    <%- include('_lr_form_fields') %>
+<div class="sign-grid">
+  <h2>Sign in</h2>
+  <form
+    class="grid-col-span-2"
+    id="login-form"
+    action="/users/login"
+    method="POST"
+  >
+    <div class="sign-in-grid">
+      <!-- <label for="email">Email</label> -->
+      <input
+        class="credential-input grid-col-span-2"
+        id="email"
+        type="email"
+        name="email"
+        placeholder="Enter your email"
+        value="<%= user.email %>"
+      />
+      <!-- <label for="passwd">Password</label> -->
+      <input
+        class="credential-input grid-col-span-2"
+        id="passwd"
+        type="password"
+        name="password"
+        placeholder="Enter your password"
+        value="<%= user.password %>"
+      />
+    </div>
   </form>
-  <ul>
-    <li>
-      <span>
-        <a href="/" class="cancel-btn">Cancel</a>
-        <button form="login-form" type="submit">Login</button>
-      </span>
-    </li>
-    <li>
-      <a href="/users/register" class="sign-suggestion"
-        >Don't have an account?</a
-      >
-    </li>
-  </ul>
+  <a href="/" class="cancel-btn">Cancel</a>
+  <button class="sign-submit-btn" form="login-form" type="submit">Login</button>
+  <a href="/users/register" class="sign-suggestion grid-col-span-2"
+    >Don't have an account?</a
+  >
 </div>
 
 <% if (errors) { %>

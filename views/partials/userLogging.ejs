@@ -1,7 +1,7 @@
 <% if (!user) { %>
-<ul>
-  <li><a href="/users/login">Login</a></li>
-  <li><a href="/users/register">Register</a></li>
+<ul class="header-sign-menus">
+  <li><a href="/users/login">Sign in</a></li>
+  <li><a href="/users/register">Sign up</a></li>
 </ul>
 <% } else if (user.username && user.email && user.password) { %>
 <form action="/users/logout?_method=DELETE" method="POST">

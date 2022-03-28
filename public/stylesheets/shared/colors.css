@@ -1,0 +1,29 @@
+:root {
+  --clr-theme: 200;
+  --bg-light: hsl(var(--clr-theme), 80%, 75%);
+  --bg-contrast: hsl(var(--clr-theme), 100%, 50%);
+  --bg-dark: hsl(var(--clr-theme), 80%, 25%);
+  --bg-hdr: #333;
+  --fg-light: hsl(var(--clr-theme), 100%, 90%);
+  --bg-content-paragraph: #eee;
+}
+
+.fg-clr-light {
+  color: var(--fg-light);
+}
+
+.bg-clr-light {
+  background-color: var(--bg-light);
+}
+
+.bg-clr-dark {
+  background-color: var(--bg-dark);
+}
+
+.bg-clr-contrast {
+  background-color: var(--bg-contrast);
+}
+
+.bg-clr-hdr {
+  background-color: var(--bg-hdr);
+}
