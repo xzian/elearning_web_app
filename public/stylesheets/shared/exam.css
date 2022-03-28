@@ -3,6 +3,11 @@
   margin-bottom: 0;
 }
 
+.exam-nav ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
 .exam-nav li {
   list-style: none;
 }
@@ -11,13 +16,6 @@
   min-width: 60ch;
   max-width: 60ch;
   background-color: #eee;
-}
-
-@media (min-width: 380px) {
-  .exam-nav ul {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-  }
 }
 
 :is(.true-false-container, .match-container) {
@@ -59,6 +57,6 @@
 }
 
 .ex-btn.active {
-  transform: translateY(2px);
+  transform: translateY(3px);
   background-color: var(--bg-contrast);
 }
