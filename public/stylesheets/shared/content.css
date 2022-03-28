@@ -1,3 +1,8 @@
+h2,
+h3 {
+  font-family: "Gotham Rounded";
+}
+
 .content {
   font-size: clamp(1rem, 0.5rem + 1vw, 1.5rem);
   max-width: 79ch;
@@ -5,6 +10,7 @@
 }
 
 .content p {
+  font-family: Roboto;
   background-color: var(--bg-content-paragraph);
   padding: 1rem;
   margin: 0.5rem 0;
