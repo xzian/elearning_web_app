@@ -17,8 +17,9 @@ router
 
 router
   .route("/two")
-  .get(checkAuthenticated, (req, res) => {
-    res.render("exams/two", { user: req.user });
+  .get(checkAuthenticated, async (req, res) => {
+    const exam = await Exam.findOne({ unit: "two" });
+    res.render("exams", { user: req.user, exam: exam });
   })
   .post(processSubmission, (req, res) => {
     res.redirect("/exams/two/results");
@@ -26,8 +27,9 @@ router
 
 router
   .route("/three")
-  .get(checkAuthenticated, (req, res) => {
-    res.render("exams/three", { user: req.user });
+  .get(checkAuthenticated, async (req, res) => {
+    const exam = await Exam.findOne({ unit: "three" });
+    res.render("exams", { user: req.user, exam: exam });
   })
   .post(processSubmission, (req, res) => {
     res.redirect("/exams/three/results");
@@ -39,12 +41,14 @@ router.get("/one/results", checkAuthenticated, async (req, res) => {
   res.render("exams/results", { user: req.user, exam: exam });
 });
 
-router.get("/two/results", checkAuthenticated, (req, res) => {
-  res.render("exams/two/results", { user: req.user });
+router.get("/two/results", checkAuthenticated, async (req, res) => {
+  const exam = await Exam.findOne({ unit: "two" });
+  res.render("exams/two/results", { user: req.user, exam: exam });
 });
 
-router.get("/three/results", checkAuthenticated, (req, res) => {
-  res.render("exams/two/results", { user: req.user });
+router.get("/three/results", checkAuthenticated, async (req, res) => {
+  const exam = await Exam.findOne({ unit: "three" });
+  res.render("exams/two/results", { user: req.user, exam: exam });
 });
 
 function checkAuthenticated(req, res, next) {
