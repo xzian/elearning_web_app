@@ -1,26 +1,38 @@
 // Exercise switching
-var url = window.location.pathname;
+const url = String(window.location.pathname);
 
-const submitExamBtn = document.getElementById("submit-exam-btn");
+var exam, submitExamBtn, exerciseContainer, exerciseBtns;
 
-const exam = url.substring(1, url.length).replace("/", "-").replace("s", "");
+if (
+  (url == "/exams/one") |
+  (url == "/exams/two") |
+  (url == "/exams/three") |
+  (url == "/exams/one/results") |
+  (url == "/exams/three/results") |
+  (url == "/exams/two/results")
+) {
+  exam = url.substring(1, url.length).replace("/", "-").replace("s", "");
 
-const exerciseContainer =
-  document.getElementsByClassName("exam-container")["0"].children; //document.getElementById(exam);
+  submitExamBtn = document.getElementById("submit-exam-btn");
+  exerciseContainer =
+    document.getElementsByClassName("exam-container")["0"].children; //document.getElementById(exam);
 
-if (exerciseContainer) {
-  hideAllExercises();
-  exerciseContainer[0].style.display = "grid";
-  submitExamBtn.style.display = "none";
-}
+  if (exerciseContainer) {
+    hideAllExercises();
+    exerciseContainer[0].style.display = "grid";
+    if (submitExamBtn) {
+      submitExamBtn.style.display = "none";
+    }
+  }
 
-const exerciseBtns = document.getElementsByClassName("ex-btn");
-if (exerciseBtns) {
-  let i = 0;
-  exerciseBtns[0].classList.add("active");
-  for (const btn of exerciseBtns) {
-    btn.addEventListener("click", displayExercise);
-    btn.toDisplay = i++;
+  exerciseBtns = document.getElementsByClassName("ex-btn");
+  if (exerciseBtns) {
+    let i = 0;
+    exerciseBtns[0].classList.add("active");
+    for (const btn of exerciseBtns) {
+      btn.addEventListener("click", displayExercise);
+      btn.toDisplay = i++;
+    }
   }
 }
 
@@ -37,9 +49,13 @@ function displayExercise(evt) {
   evt.currentTarget.classList.add("active");
 
   if (evt.currentTarget.toDisplay == 3) {
-    submitExamBtn.style.display = "block";
+    if (submitExamBtn) {
+      submitExamBtn.style.display = "block";
+    }
   } else {
-    submitExamBtn.style.display = "none";
+    if (submitExamBtn) {
+      submitExamBtn.style.display = "none";
+    }
   }
 }
 

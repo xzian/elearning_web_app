@@ -7,6 +7,8 @@ h3 {
   font-size: clamp(1rem, 0.5rem + 1vw, 1.5rem);
   max-width: 79ch;
   padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.5);
 }
 
 .content p {

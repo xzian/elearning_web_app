@@ -13,8 +13,7 @@
 }
 
 .exam-ex-container {
-  min-width: 60ch;
-  max-width: 60ch;
+  max-width: 55ch;
   background-color: #eee;
 }
 
@@ -44,6 +43,7 @@
 :is(.true-false-container, .match-container, .multiple-choice-container, .fill-gaps-container) {
   padding: 0 1rem 1rem 1rem;
   border: 2px solid black;
+  border-radius: 0 0 0.5rem 0.5rem;
   background-color: var(--bg-contrast);
 }
 
@@ -52,11 +52,29 @@
   padding: 0.5rem;
   font-family: "Gotham Rounded";
   border: 2px solid black;
-  border-radius: 0.25rem 0.5rem 0 0;
   border-bottom: none;
+  border-radius: 0.5rem 0.5rem 0 0;
+  background-color: var(--bg-input);
 }
 
 .ex-btn.active {
   transform: translateY(3px);
   background-color: var(--bg-contrast);
+}
+
+.exercise {
+  border-radius: 0.25rem;
+}
+
+.submit-exam {
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* results */
+.correct-answer {
+  background-color: lime;
+}
+
+.incorrect-answer {
+  background-color: red;
 }

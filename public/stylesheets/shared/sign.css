@@ -30,9 +30,12 @@
 }
 
 :is(.sign-suggestion, .sign-submit-btn, .cancel-btn) {
+  min-width: 100%;
+}
+
+:is(.sign-suggestion, .sign-submit-btn, .cancel-btn, .submit-exam) {
   text-align: center;
   font-size: 1.5rem;
-  min-width: 100%;
   font-style: inherit;
   margin: 0 auto;
   padding: 0 0.25rem;
@@ -42,20 +45,20 @@
   transition: background-color 150ms ease-in-out, border 150ms ease-in-out;
 }
 
-:is(.sign-suggestion, .sign-submit-btn, .cancel-btn):hover {
+:is(.sign-suggestion, .sign-submit-btn, .cancel-btn, .submit-exam):hover {
   background-color: white;
 }
 
-:is(.sign-suggestion, .sign-submit-btn) {
+:is(.sign-suggestion, .sign-submit-btn, .submit-exam) {
   background-color: var(--bg-contrast);
 }
 
-:is(.sign-suggestion, .sign-submit-btn):hover {
+:is(.sign-suggestion, .sign-submit-btn, .submit-exam):hover {
   color: var(--bg-contrast);
   border-color: var(--bg-contrast);
 }
 
-:is(.sign-suggestion, .sign-submit-btn):active {
+:is(.sign-suggestion, .sign-submit-btn, .submit-exam):active {
   border-color: lime;
   color: lime;
 }
@@ -74,7 +77,7 @@
   border: 5px solid transparent;
   border-radius: 0.5rem;
   padding: 0.5rem;
-  background-color: #ddd;
+  background-color: var(--bg-input);
 }
 
 .credential-input:focus {

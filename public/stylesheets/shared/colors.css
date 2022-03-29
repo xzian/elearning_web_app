@@ -1,11 +1,12 @@
 :root {
-  --clr-theme: 200;
-  --bg-light: hsl(var(--clr-theme), 80%, 75%);
+  --clr-theme: 205;
+  --bg-light: hsl(var(--clr-theme), 100%, 65%);
+  --bg-dark: hsl(var(--clr-theme), 100%, 25%);
   --bg-contrast: hsl(var(--clr-theme), 100%, 50%);
-  --bg-dark: hsl(var(--clr-theme), 80%, 25%);
   --bg-hdr: #333;
   --fg-light: hsl(var(--clr-theme), 100%, 90%);
   --bg-content-paragraph: #eee;
+  --bg-input: #ddd;
 }
 
 .fg-clr-light {

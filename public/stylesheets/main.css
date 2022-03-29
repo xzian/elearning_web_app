@@ -13,10 +13,10 @@
 }
 
 html {
-  background-image: linear-gradient(
-    to right bottom,
-    var(--bg-dark) 20%,
-    var(--bg-light) 70%
+  background-image: radial-gradient(
+    circle at center,
+    var(--bg-light) 5%,
+    var(--bg-dark) 150%
   );
   background-repeat: no-repeat;
   background-attachment: fixed;
