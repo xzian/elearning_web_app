@@ -26,6 +26,7 @@ async function compareAnswers(submittedAnswers) {
           answer["class"] = "correct-answer";
         } else {
           incorrectCount++;
+          answer["correct-answer"] = solutionDocument.solutions[key];
           answer["incorrect-answer"] = submittedAnswers.submitted[key];
           answer["class"] = "incorrect-answer";
         }
@@ -39,7 +40,6 @@ async function compareAnswers(submittedAnswers) {
   }
   let unansweredCount =
     Object.keys(solutionDocument.solutions).length - submittedCount;
-
   return {
     unit: submittedAnswers.unit,
     submitted: submittedCount,

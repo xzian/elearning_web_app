@@ -3,10 +3,13 @@ const saveResult = require("../config/utils").saveResult;
 const express = require("express");
 const router = express.Router();
 
+const Exam = require("../models/exam");
+
 router
   .route("/one")
-  .get(checkAuthenticated, (req, res) => {
-    res.render("exams/one", { user: req.user });
+  .get(checkAuthenticated, async (req, res) => {
+    const exam = await Exam.findOne({ unit: "one" });
+    res.render("exams", { user: req.user, exam: exam });
   })
   .post(processSubmission, (req, res) => {
     res.redirect("/exams/one/results");
@@ -30,8 +33,10 @@ router
     res.redirect("/exams/three/results");
   });
 
-router.get("/one/results", checkAuthenticated, (req, res) => {
-  res.render("exams/one/results", { user: req.user });
+router.get("/one/results", checkAuthenticated, async (req, res) => {
+  const exam = await Exam.findOne({ unit: "one" });
+  // console.log(exam);
+  res.render("exams/results", { user: req.user, exam: exam });
 });
 
 router.get("/two/results", checkAuthenticated, (req, res) => {

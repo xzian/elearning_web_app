@@ -1,7 +1,6 @@
 <section class="content exam-ex-container">
-  <h2>Unit 1 Test</h2>
+  <h2><%= exam.unitHeading %></h2>
   <%- include('../_exerciseHeader.ejs') %>
-
   <form id="exam-one" action="/exams/one" method="post">
     <div class="exam-container">
       <div class="true-false-container">
@@ -215,11 +214,6 @@
 
       <div class="fill-gaps-container">
         <h3>Exercise 4</h3>
-
-        <!-- <code class="hljs"
-          ><span class="hljs-keyword">int</span>
-          <span class="hljs-variable">a</span>
-        </code> -->
 
         <div>
           <input type="text" name="ex4a" />

@@ -1,0 +1,74 @@
+<% var answers; for (let i = 0; i < user.exams.length; i++) { if
+(user.exams[i].unit == exam.unit) { answers = user.exams[i].answers; break; } }
+%>
+<section class="content exam-ex-container">
+  <h2><%= exam.unitHeading %> Results</h2>
+  <%- include('./_exerciseHeader.ejs') %>
+  <div class="exam-container">
+    <div class="<%= exam.exerciseOne.exerciseContainerClass %>">
+      <h3><%= exam.exerciseOne.exerciseHeading %></h3>
+      <% for (const e of exam.exerciseOne.questions) { %>
+      <div>
+        <% const answer = answers[e.selectName]; %>
+        <label for="<%= e.selectId %>" class="exercise"><%= e.label %></label>
+        <div>
+          <input
+            class="<%= answer.class %>"
+            type="text"
+            value="<%= answer[answer.class] %>"
+            readonly
+          />
+          <input id="<%= e.selectId %>" class="correct-answer" type="text"
+          value="<%= answer["correct-answer"] %>" readonly>
+        </div>
+      </div>
+      <% } %>
+    </div>
+
+    <div class="<%= exam.exerciseTwo.exerciseContainerClass %>">
+      <h3><%= exam.exerciseTwo.exerciseHeading %></h3>
+      <% for (const e of exam.exerciseTwo.questions) { %>
+      <div>
+        <p class="exercise"><%= e.pDescription %></p>
+        <div>
+          <% for (const o of e.checkBoxOptions) { %>
+          <div>
+            <label for="<%= o.optionId %>"><%= o.label %></label>
+            <input
+              id="<%= o.optionId %>"
+              class="<%= answers[o.optionName].class %>"
+              type="text"
+            />
+            <% if (answers[o.optionName].class == "correct-answer") { %>
+            <input class="correct-answer" type="text" />
+            <% } else { %>
+            <input class="incorrect-answer" type="text" />
+            <% } %>
+          </div>
+          <% } %>
+        </div>
+      </div>
+      <% } %>
+    </div>
+
+    <div class="<%= exam.exerciseThree.exerciseContainerClass %>">
+      <h3><%= exam.exerciseThree.exerciseHeading %></h3>
+      <% for (const e of exam.exerciseThree.questions) { %>
+      <div>
+        <% const answer = answers[e.selectName]; %>
+        <label for="<%= e.selectId %>" class="exercise"><%= e.label %></label>
+        <div>
+          <input
+            class="<%= answer.class %>"
+            type="text"
+            value="<%= answer[answer.class] %>"
+            readonly
+          />
+          <input id="<%= e.selectId %>" class="correct-answer" type="text"
+          value="<%= answer["correct-answer"] %>" readonly>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </div>
+</section>
