@@ -37,18 +37,17 @@ router
 
 router.get("/one/results", checkAuthenticated, async (req, res) => {
   const exam = await Exam.findOne({ unit: "one" });
-  // console.log(exam);
   res.render("exams/results", { user: req.user, exam: exam });
 });
 
 router.get("/two/results", checkAuthenticated, async (req, res) => {
   const exam = await Exam.findOne({ unit: "two" });
-  res.render("exams/two/results", { user: req.user, exam: exam });
+  res.render("exams/results", { user: req.user, exam: exam });
 });
 
 router.get("/three/results", checkAuthenticated, async (req, res) => {
   const exam = await Exam.findOne({ unit: "three" });
-  res.render("exams/two/results", { user: req.user, exam: exam });
+  res.render("exams/results", { user: req.user, exam: exam });
 });
 
 function checkAuthenticated(req, res, next) {

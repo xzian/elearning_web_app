@@ -1,0 +1,66 @@
+.cards {
+  display: grid;
+  gap: 1rem;
+}
+
+.stat-card {
+  font-family: "Gotham Rounded";
+  background-color: #eee;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  display: grid;
+  gap: 0.25rem;
+  grid-template-columns: repeat(2, 1fr);
+  transition: box-shadow 150ms ease-in, transform 150ms ease-in-out;
+}
+
+.stat-card > span {
+  width: 100%;
+  background-color: #ddd;
+}
+
+.stat-card > span:nth-of-type(even) {
+  text-align: right;
+}
+
+.stat-card > h4 {
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  padding: 0.5rem;
+  border-radius: 0.5rem 0.5rem 0 0;
+  color: var(--fg-light);
+  background-color: var(--bg-contrast);
+}
+
+.stat-card > a {
+  text-align: center;
+  text-decoration: none;
+  color: var(--bg-contrast);
+  margin: 0 auto;
+  padding: 0.5rem;
+  border: 2px solid transparent;
+  border-radius: 0.5rem;
+  transition: border 150ms ease-in-out;
+}
+
+.stat-card > a:hover {
+  border: 2px solid var(--bg-contrast);
+}
+
+.stat-card > a:focus {
+  color: lime;
+  border-color: lime;
+}
+
+@media (min-width: 380px) {
+  .cards {
+    gap: 1rem;
+    place-items: start;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .stat-card:hover {
+    box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.5);
+    transform: scale(1.25);
+  }
+}

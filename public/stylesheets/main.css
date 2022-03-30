@@ -5,6 +5,7 @@
 @import "./shared/sign.css";
 @import "./shared/content.css";
 @import "./shared/exam.css";
+@import "./shared/profile.css";
 
 *,
 *::before,

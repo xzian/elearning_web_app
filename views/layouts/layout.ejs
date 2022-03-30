@@ -10,6 +10,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap"
+      rel="stylesheet"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
       rel="stylesheet"
     />
@@ -45,31 +49,31 @@
         <a class="header-title grid-col-span-2" href="/">eLearn</a>
         <% if (!user) { %>
         <ul class="header-sign-menus grid-row-span-2">
-          <li><a href="/users/login">Sign in</a></li>
-          <li><a href="/users/register">Sign up</a></li>
+          <li><a href="/users/login">Σύνδεση</a></li>
+          <li><a href="/users/register">Εγγραφή</a></li>
         </ul>
         <% } else if (user.username && user.email && user.password) { %>
         <form action="/users/logout?_method=DELETE" method="POST">
           <button type="submit" class="log-out-btn grid-row-span-2">
-            Log Out
+            Αποσύνδεση
           </button>
         </form>
         <% } %>
         <ul class="header-submenus">
-          <li><a href="/studying_material">Study</a></li>
+          <li><a href="/studying_material">Ενότητες</a></li>
           <li>
             <div class="dropdown" data-dropdown>
-              <button class="link" data-dropdown-button>Tests</button>
+              <button class="link" data-dropdown-button>Διαγωνίσματα</button>
               <div class="dropdown-menu">
                 <div class="dropdown-links bg-clr-hdr">
-                  <a href="/exams/one" id="exam-one-btn">Unit 1 test</a>
-                  <a href="/exams/two" id="exam-two-btn">Unit 2 test</a>
-                  <a href="/exams/three" id="exam-three-btn">Unit 3 test</a>
+                  <a href="/exams/one" id="exam-one-btn">Ενότητα 1</a>
+                  <a href="/exams/two" id="exam-two-btn">Ενότητα 2</a>
+                  <a href="/exams/three" id="exam-three-btn">Ενότητα 3</a>
                 </div>
               </div>
             </div>
           </li>
-          <li><a href="/users/profile">Profile</a></li>
+          <li><a href="/users/profile">Προφίλ</a></li>
         </ul>
       </nav>
     </header>

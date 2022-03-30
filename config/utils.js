@@ -1,9 +1,18 @@
 const Answer = require("../models/answer");
+const Exam = require("../models/exam");
 const User = require("../models/user");
 
 // Compare submitted answers with the solutions in the database,
 // then return some statistic results
 async function compareAnswers(submittedAnswers) {
+  const examCollection = await Exam.findOne({ unit: submittedAnswers.unit });
+
+  let unitTitle, unitNumber;
+  if (examCollection) {
+    unitTitle = examCollection.unitHeading;
+    unitNumber = examCollection.unitNumber;
+  }
+
   const solutionDocument = await Answer.findOne({
     unit: submittedAnswers.unit,
   });
@@ -41,7 +50,9 @@ async function compareAnswers(submittedAnswers) {
   let unansweredCount =
     Object.keys(solutionDocument.solutions).length - submittedCount;
   return {
+    unitTitle: unitTitle,
     unit: submittedAnswers.unit,
+    unitNumber: unitNumber,
     submitted: submittedCount,
     correct: correctCount,
     incorrect: incorrectCount,
@@ -55,7 +66,9 @@ async function saveResult(exams) {
   const found = await User.find({
     _id: exams.userId,
     exams: {
+      unitTitle: exams.results.unitTitle,
       unit: exams.results.unit,
+      unitNumber: exams.results.unitNumber,
       submitted: exams.results.submitted,
       correct: exams.results.correct,
       incorrect: exams.results.incorrect,

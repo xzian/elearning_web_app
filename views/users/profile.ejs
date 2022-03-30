@@ -1,13 +1,25 @@
 <% if (user) { %>
 <h2>Hello, <%= user.username %>!</h2>
 <h3>Your stats</h3>
-<% user.exams.forEach((e) => { %>
-<div class="content-container">
-  <div>Unit: <%= e.unit %></div>
-  <div>Submitted answers: <%= e.submitted %></div>
-  <div>Correct answers: <%= e.correct %></div>
-  <div>Incorrect answers: <%= e.incorrect %></div>
+<% user.exams.sort((a, b) => a.unitNumber - b.unitNumber); %>
+<div class="cards">
+  <% user.exams.forEach((e) => { %>
+  <div class="stat-card">
+    <h4 class="grid-col-span-2"><%= e.unitTitle %></h4>
+    <span>Submitted answers:</span> <span><%= e.submitted %></span>
+    <span>Correct answers:</span> <span><%= e.correct %></span>
+    <span>Incorrect answers:</span> <span><%= e.incorrect %></span>
+    <span>Average:</span>
+    <span
+      ><%= (10 * e.correct / (e.submitted + e.unanswered)).toPrecision(1)
+      %></span
+    >
+    <a href="/exams/<%= e.unit %>" class="grid-col-span-2 retry-exam"
+      >Try again?</a
+    >
+  </div>
+  <% }); %>
 </div>
-<% }); %> <% } else { %>
+<% } else { %>
 <h2 class="error-message-heading"><%= message %></h2>
 <% } %>

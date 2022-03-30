@@ -1,5 +1,5 @@
 <div class="sign-grid">
-  <h2>Sign in</h2>
+  <h2>Σύνδεση</h2>
   <form
     class="grid-col-span-2"
     id="login-form"
@@ -13,7 +13,7 @@
         id="email"
         type="email"
         name="email"
-        placeholder="Enter your email"
+        placeholder="Συμπλήρωσε το email σου"
         value="<%= user.email %>"
       />
       <!-- <label for="passwd">Password</label> -->
@@ -22,15 +22,17 @@
         id="passwd"
         type="password"
         name="password"
-        placeholder="Enter your password"
+        placeholder="Συμπλήρωσε το password σου"
         value="<%= user.password %>"
       />
     </div>
   </form>
-  <a href="/" class="cancel-btn">Cancel</a>
-  <button class="sign-submit-btn" form="login-form" type="submit">Login</button>
+  <a href="/" class="cancel-btn">Ακύρωση</a>
+  <button class="sign-submit-btn" form="login-form" type="submit">
+    Σύνδεση
+  </button>
   <a href="/users/register" class="sign-suggestion grid-col-span-2"
-    >Don't have an account?</a
+    >Δεν έχεις λογαριασμό;</a
   >
 </div>
 
