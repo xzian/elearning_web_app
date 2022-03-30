@@ -29,6 +29,10 @@ h3 {
   background-color: transparent;
 }
 
+.code-grid {
+  font-size: clamp(0.5rem, 0.3rem + 1.5vw, 1.5rem);
+}
+
 @media (min-width: 800px) {
   .content-grid {
     display: grid;
@@ -37,8 +41,7 @@ h3 {
   }
 
   .code-grid {
-    font-size: 0.9rem;
-    height: 100%;
+    font-size: 1rem;
     place-items: center;
   }
 
