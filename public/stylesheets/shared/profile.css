@@ -11,7 +11,7 @@
   display: grid;
   gap: 0.25rem;
   grid-template-columns: repeat(2, 1fr);
-  transition: box-shadow 150ms ease-in, transform 150ms ease-in-out;
+  transition: transform 150ms ease-in-out;
 }
 
 .stat-card > span {
@@ -36,9 +36,9 @@
 .stat-card > a {
   text-align: center;
   text-decoration: none;
-  color: var(--bg-contrast);
   margin: 0 auto;
   padding: 0.5rem;
+  color: var(--bg-contrast);
   border: 2px solid transparent;
   border-radius: 0.5rem;
   transition: border 150ms ease-in-out;

@@ -18,19 +18,41 @@ h3 {
   margin: 0.5rem 0;
 }
 
+.content p:first-child {
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.content p:last-child {
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.content p:only-child {
+  border-radius: 0.5rem;
+}
+
 .code-grid {
+  position: relative;
   display: grid;
+  font-size: clamp(0.5rem, 0.3rem + 1.5vw, 1.5rem);
   border: 10px solid var(--bg-content-paragraph);
   background-color: rgb(40, 44, 52);
   box-shadow: inset 0 0 10px 3px rgba(255, 255, 255, 0.5);
 }
 
-.code-grid code {
-  background-color: transparent;
+.copy-code-btn {
+  position: absolute;
+  inset: auto 0.5rem 0.5rem auto;
+  border: 2px solid transparent;
+  padding: 0.5rem;
+  border-radius: 50%;
+  opacity: 0;
+  color: white;
+  background-color: var(--bg-contrast);
+  transition: background-color 150ms ease-in-out, opacity 150ms ease-in-out;
 }
 
-.code-grid {
-  font-size: clamp(0.5rem, 0.3rem + 1.5vw, 1.5rem);
+.code-grid code {
+  background-color: transparent;
 }
 
 @media (min-width: 800px) {
