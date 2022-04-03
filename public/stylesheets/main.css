@@ -32,3 +32,17 @@ html {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   margin-top: 10rem;
 }
+
+#main-content {
+  animation: main-load 350ms ease-in;
+}
+
+@keyframes main-load {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

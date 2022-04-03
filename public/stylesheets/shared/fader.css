@@ -1,7 +1,7 @@
 .fade-in {
   opacity: 0;
   max-width: 300px;
-  transition: opacity 250ms ease-in;
+  transition: opacity 1s ease-in;
 }
 
 .fade-in.appear {
