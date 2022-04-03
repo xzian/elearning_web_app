@@ -22,10 +22,7 @@ router.get("/register", (req, res) => {
 });
 
 router.get("/profile", checkAuthenticated, (req, res) => {
-  res.render("users/profile", {
-    user: req.user,
-    message: "You must be logged in",
-  });
+  res.render("users/profile", { user: req.user });
 });
 
 // Look for user in the database
@@ -78,7 +75,7 @@ function checkAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
     return next();
   }
-  return next();
+  return res.redirect("/users/login");
 }
 
 module.exports = router;

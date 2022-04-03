@@ -35,6 +35,17 @@ router
     res.redirect("/exams/three/results");
   });
 
+// TODO: change 3 to final
+router
+  .route("/final")
+  .get(checkAuthenticated, async (req, res) => {
+    const exam = await Exam.findOne({ unit: "three" });
+    res.render("exams", { user: req.user, exam: exam });
+  })
+  .post(processSubmission, (req, res) => {
+    res.redirect("/exams/final/results");
+  });
+
 router.get("/one/results", checkAuthenticated, async (req, res) => {
   const exam = await Exam.findOne({ unit: "one" });
   res.render("exams/results", { user: req.user, exam: exam });
@@ -50,11 +61,17 @@ router.get("/three/results", checkAuthenticated, async (req, res) => {
   res.render("exams/results", { user: req.user, exam: exam });
 });
 
+// TODO: change 3 to final
+router.get("/final/results", checkAuthenticated, async (req, res) => {
+  const exam = await Exam.findOne({ unit: "three" });
+  res.render("exams/results", { user: req.user, exam: exam });
+});
+
 function checkAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
     return next();
   }
-  return res.redirect("/");
+  return res.redirect("/users/login");
 }
 
 async function processSubmission(req, res, next) {

@@ -50,6 +50,7 @@
 .ex-btn {
   width: 100%;
   padding: 0.5rem;
+  font-size: clamp(0.575rem, 0.275rem + 1vw, 1rem);
   font-family: "Gotham Rounded";
   border: 2px solid black;
   border-bottom: none;
