@@ -6,75 +6,28 @@ const router = express.Router();
 const Exam = require("../models/exam");
 
 router
-  .route("/one")
+  .route("/:unit")
   .get(checkAuthenticated, async (req, res) => {
-    const exam = await Exam.findOne({ unit: "one" });
-    res.render("exams", { user: req.user, exam: exam });
+    const exam = await Exam.findOne({ unit: req.params.unit });
+    if (exam) {
+      res.render("exams", { user: req.user, exam: exam });
+    } else {
+      res.redirect("/");
+    }
   })
   .post(processSubmission, (req, res) => {
-    res.redirect("/exams/results/one");
-    // res.redirect("/exams/one/results");
+    res.redirect(`/exams/${req.params.unit}/results`);
   });
 
-router
-  .route("/two")
-  .get(checkAuthenticated, async (req, res) => {
-    const exam = await Exam.findOne({ unit: "two" });
-    res.render("exams", { user: req.user, exam: exam });
-  })
-  .post(processSubmission, (req, res) => {
-    res.redirect("/exams/results/two");
-    // res.redirect("/exams/two/results");
-  });
-
-router
-  .route("/three")
-  .get(checkAuthenticated, async (req, res) => {
-    const exam = await Exam.findOne({ unit: "three" });
-    res.render("exams", { user: req.user, exam: exam });
-  })
-  .post(processSubmission, (req, res) => {
-    res.redirect("/exams/results/three");
-    // res.redirect("/exams/three/results");
-  });
-
-// TODO: change 3 to final
-router
-  .route("/final")
-  .get(checkAuthenticated, async (req, res) => {
-    const exam = await Exam.findOne({ unit: "three" });
-    res.render("exams", { user: req.user, exam: exam });
-  })
-  .post(processSubmission, (req, res) => {
-    res.redirect("/exams/results/final");
-    // res.redirect("/exams/final/results");
-  });
-
-router.get("/results/:exam", checkAuthenticated, async (req, res) => {
+//TODO: add final exam in database
+router.get("/:exam/results", checkAuthenticated, async (req, res) => {
   const exam = await Exam.findOne({ unit: req.params.exam });
-  res.render("exams/results", { user: req.user, exam: exam });
+  if (exam) {
+    res.render("exams/results", { user: req.user, exam: exam });
+  } else {
+    res.redirect("/");
+  }
 });
-
-// router.get("/one/results", checkAuthenticated, async (req, res) => {
-//   const exam = await Exam.findOne({ unit: "one" });
-//   res.render("exams/results", { user: req.user, exam: exam });
-// });
-
-// router.get("/two/results", checkAuthenticated, async (req, res) => {
-//   const exam = await Exam.findOne({ unit: "two" });
-//   res.render("exams/results", { user: req.user, exam: exam });
-// });
-
-// router.get("/three/results", checkAuthenticated, async (req, res) => {
-//   const exam = await Exam.findOne({ unit: "three" });
-//   res.render("exams/results", { user: req.user, exam: exam });
-// });
-
-// // TODO: change 3 to final
-// router.get("/final/results", checkAuthenticated, async (req, res) => {
-//   const exam = await Exam.findOne({ unit: "three" });
-//   res.render("exams/results", { user: req.user, exam: exam });
-// });
 
 function checkAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
