@@ -12,7 +12,8 @@ router
     res.render("exams", { user: req.user, exam: exam });
   })
   .post(processSubmission, (req, res) => {
-    res.redirect("/exams/one/results");
+    res.redirect("/exams/results/one");
+    // res.redirect("/exams/one/results");
   });
 
 router
@@ -22,7 +23,8 @@ router
     res.render("exams", { user: req.user, exam: exam });
   })
   .post(processSubmission, (req, res) => {
-    res.redirect("/exams/two/results");
+    res.redirect("/exams/results/two");
+    // res.redirect("/exams/two/results");
   });
 
 router
@@ -32,7 +34,8 @@ router
     res.render("exams", { user: req.user, exam: exam });
   })
   .post(processSubmission, (req, res) => {
-    res.redirect("/exams/three/results");
+    res.redirect("/exams/results/three");
+    // res.redirect("/exams/three/results");
   });
 
 // TODO: change 3 to final
@@ -43,29 +46,35 @@ router
     res.render("exams", { user: req.user, exam: exam });
   })
   .post(processSubmission, (req, res) => {
-    res.redirect("/exams/final/results");
+    res.redirect("/exams/results/final");
+    // res.redirect("/exams/final/results");
   });
 
-router.get("/one/results", checkAuthenticated, async (req, res) => {
-  const exam = await Exam.findOne({ unit: "one" });
+router.get("/results/:exam", checkAuthenticated, async (req, res) => {
+  const exam = await Exam.findOne({ unit: req.params.exam });
   res.render("exams/results", { user: req.user, exam: exam });
 });
 
-router.get("/two/results", checkAuthenticated, async (req, res) => {
-  const exam = await Exam.findOne({ unit: "two" });
-  res.render("exams/results", { user: req.user, exam: exam });
-});
+// router.get("/one/results", checkAuthenticated, async (req, res) => {
+//   const exam = await Exam.findOne({ unit: "one" });
+//   res.render("exams/results", { user: req.user, exam: exam });
+// });
 
-router.get("/three/results", checkAuthenticated, async (req, res) => {
-  const exam = await Exam.findOne({ unit: "three" });
-  res.render("exams/results", { user: req.user, exam: exam });
-});
+// router.get("/two/results", checkAuthenticated, async (req, res) => {
+//   const exam = await Exam.findOne({ unit: "two" });
+//   res.render("exams/results", { user: req.user, exam: exam });
+// });
 
-// TODO: change 3 to final
-router.get("/final/results", checkAuthenticated, async (req, res) => {
-  const exam = await Exam.findOne({ unit: "three" });
-  res.render("exams/results", { user: req.user, exam: exam });
-});
+// router.get("/three/results", checkAuthenticated, async (req, res) => {
+//   const exam = await Exam.findOne({ unit: "three" });
+//   res.render("exams/results", { user: req.user, exam: exam });
+// });
+
+// // TODO: change 3 to final
+// router.get("/final/results", checkAuthenticated, async (req, res) => {
+//   const exam = await Exam.findOne({ unit: "three" });
+//   res.render("exams/results", { user: req.user, exam: exam });
+// });
 
 function checkAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
