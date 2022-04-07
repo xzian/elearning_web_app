@@ -69,12 +69,12 @@
                   <a href="/exams/one" id="exam-one-btn">Ενότητα 1</a>
                   <a href="/exams/two" id="exam-two-btn">Ενότητα 2</a>
                   <a href="/exams/three" id="exam-three-btn">Ενότητα 3</a>
-                  <% if (user.exams.length == 3) { %>
+                  <% if (user && user.exams.length == 3) { %>
 
                   <a href="/exams/final" id="exam-final-btn"
                     >Τελικό Διαγώνισμα</a
                   >
-                  <% if (user.exams.length == 4) { %>
+                  <% if (user && user.exams.length == 4) { %>
                   <div>a</div>
                   <% } %> <% } %>
                 </div>

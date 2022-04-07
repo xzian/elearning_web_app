@@ -1,0 +1,18 @@
+.introduction {
+  display: grid;
+  gap: 1rem;
+}
+
+.introduction a {
+  color: var(--bg-contrast);
+  text-decoration: none;
+}
+
+.introduction > div:first-child {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+.introduction > div:first-child > img {
+  width: 100%;
+}
