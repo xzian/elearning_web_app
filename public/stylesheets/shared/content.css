@@ -30,10 +30,21 @@ h3 {
   border-radius: 0.5rem;
 }
 
+.list {
+  font-family: Roboto;
+  background-color: var(--bg-content-paragraph);
+  margin: 0;
+}
+
+.list > ol {
+  display: grid;
+  gap: 0.5rem;
+}
+
 .code-grid {
   position: relative;
   display: grid;
-  font-size: clamp(0.5rem, 0.3rem + 1.5vw, 1.5rem);
+  font-size: clamp(0.3rem, 0.125rem + 1.5vw, 1.5rem);
   border: 10px solid var(--bg-content-paragraph);
   background-color: rgb(40, 44, 52);
   box-shadow: inset 0 0 10px 3px rgba(255, 255, 255, 0.5);
@@ -63,11 +74,19 @@ h3 {
   }
 
   .code-grid {
-    font-size: 1rem;
+    font-size: clamp(1rem, 0.5rem + 1vw, 1.5rem);
+    /* font-size: 1rem; */
+  }
+
+  .centered-code {
     place-items: center;
   }
 
   .content p {
     margin: 0;
   }
+}
+
+.grid-row-span-3 {
+  grid-row: span 3;
 }

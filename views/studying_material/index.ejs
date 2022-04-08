@@ -1,49 +1,182 @@
 <section class="content bg-clr-contrast">
-  <h2 class="fg-clr-light">Unit 1</h2>
+  <h2 class="fg-clr-light">Ενότητα 1 – Τα βασικά</h2>
   <article>
-    <h3>Variables</h3>
+    <h3>Μεταβλητές</h3>
     <div class="content-grid">
       <p class="grid-col-span-2">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit,
-        reiciendis mollitia similique aut at maxime molestias, perferendis dicta
-        consequatur, ullam animi. Minima veritatis delectus, incidunt ea, nulla
-        voluptatibus reprehenderit neque at iste nam voluptates placeat modi
-        aliquid, iusto adipisci! Neque cumque non sint fugit sequi saepe, optio
-        libero iste? Magnam reiciendis molestias ullam, itaque veritatis labore
-        nisi, delectus aut quam libero repellat culpa nostrum dolore facilis nam
-        incidunt aspernatur aperiam temporibus eius illo?
+        Σκέψου το παρακάτω σενάριο… <br /><br />
+        Θέλεις να μοιραστείς την συνταγή για κέικ της γιαγιάς σου με τους φίλους
+        σου, και ξεκινάς να την γράφεις σε ένα μήνυμα στο κινητό σου. Στο τέλος
+        που την ελέγχεις για λάθη, συνειδητοποιείς ότι έγραψες παντού λάθος την
+        ποσότητα του μπέικιν-πάουντερ που χρειάζεται το κέικ και πρέπει να βρεις
+        και να αλλάξεις αυτές τις ποσότητες μία-μία. Δεν θα ήταν τέλειο αν
+        μπορούσες να αλλάξεις μόνο μία από αυτές και να αλλάξουν και οι άλλες;
+        Αυτό που χρειάζεσαι είναι μία <strong>μεταβλητή</strong>!<br /><br />
+        <code>bakingPowder = “1 κ.γ.”</code>, και το πρόβλημά σου λύθηκε.<br /><br />
+        Η γιαγιά σου θα είναι περίφανη για εσένα!
       </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore a quo,
-        illo nostrum quam reiciendis adipisci dolorem vel porro accusantium
-        ipsa? Totam est delectus officia quaerat, ipsa voluptates sed aut.
+
+      <p class="grid-col-span-2">
+        Μια μεταβλητή είναι ένα σύμβολο, ή μια συμβολοσειρά που αντιπροσωπεύει
+        μια τιμή, η οποία μπορεί κάποια στιγμή να αλλάξει. Στην παραπάνω
+        έκφραση, η <strong>μεταβλητή</strong> είναι το
+        <code>bakingPowder</code>, και το <code>“1 κ.γ.”</code> είναι η τιμή,
+        <strong>τύπου</strong> <code>String</code>, που εκχωρείται σε αυτήν με
+        τον <strong>τελεστή</strong> εκχώρησης <code>=</code>.
       </p>
-      <div class="code-grid">
-        <pre><code class="java">public class Main {
-  public static void main(String[] args) {
-    System.out.println("Hello World");
-  }
-}</code></pre>
+
+      <p class="grid-col-span-2">
+        Στην <strong>Java</strong>, οι μεταβλητές έχουν συγκεκριμένους
+        <strong>τύπους</strong>. Υπάρχουν πολλοί τύποι μεταβλητών, ανάμεσα στους
+        οποίους βρίσκονται αριθμοί, λέξεις (συμβολοσειρές), κ.ά. Ακολουθούν
+        μερικά παραδείγματα δήλωσης μεταβλητών.
+      </p>
+      <div class="code-grid grid-col-span-2">
+        <pre><code class="java">int myFirstInteger = 10;      // Ακέραια μεταβλητή
+double myFirstDouble = 15.4;  // Μεταβλητή κινητής υποδιαστολής
+bool myFirstBoolean = true;   // Λογική μεταβλητή
+char myFirstCharacter = 'J';  // Χαρακτήρας
+String myFirstString = "Java";// Λέξη / Συμβολοσειρά
+</code></pre>
       </div>
       <p class="grid-col-span-2">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident
-        officia velit excepturi aliquam perferendis suscipit asperiores unde
-        sequi sint molestiae dolorum doloremque, vel eaque! Nostrum,
-        perferendis. Vitae magni, fugiat numquam tempore ipsum dignissimos!
-        Aspernatur, iure, error vitae numquam minima eligendi assumenda tempore
-        tenetur odio illum sunt amet, sequi qui? Harum! Lorem, ipsum dolor sit
-        amet consectetur adipisicing elit. Neque omnis repudiandae voluptates
-        dolore similique quae quaerat. Sunt adipisci ducimus sint? Temporibus,
-        earum. Mollitia, aut. Eum non aspernatur accusantium dolor quod. Iure
-        reiciendis ex quisquam nisi, dolorum aspernatur eum necessitatibus illo
-        veritatis amet. Quaerat architecto voluptatibus eum, aliquid deserunt ad
-        asperiores nisi dignissimos fugit quis eveniet magnam! Iure dolorum,
-        architecto rem corporis incidunt quos fugit id debitis tempore
-        perferendis tempora assumenda iste blanditiis nihil exercitationem
-        dignissimos reiciendis nobis neque officiis temporibus odit hic beatae
-        fuga. Assumenda laboriosam, aperiam facilis aliquam suscipit sed
-        distinctio, officia possimus expedita autem ex iure corrupti veritatis.
+        <strong>Bonus - Παρατήρησες τους ειδικούς χαρακτήρες;</strong
+        ><br /><br />
+        Το Ελληνικό ερωτηματικό, ή semicolon (<code>;</code>) χρησιμοποιείται
+        για τον διαχωρισμό των διαφόρων εντολών μεταξύ τους και είναι
+        <strong>υποχρεωτικό</strong> στην Java.
       </p>
+      <p>
+        Η διπλή κάθετος (<code>//</code>) χρησιμοποιείται για να προσθέσουμε
+        σχόλια στο πρόγραμμα μας. Τα σχόλια που ξεκινούν με διπλή κάθετο είναι
+        μόνο για την γραμμή εκείνη.<br /><br />
+        Υπάρχουν όμως και τα σχόλια πολλαπλών γραμμών, τα οποία χρησιμοποιούμε
+        όταν θέλουμε να γράψουμε, για παράδειγμα, αναλυτική περιγραφή ενός
+        τμήματος κώδικα.<br /><br />
+        Τα σχόλια πολλαπλών γραμμών δεν χρειάζεται υποχρεωτικά να είναι μεγάλα.
+        Μπορούν επίσης να χρησιμοποιηθούν για να προσθέσουμε σχόλιο ανάμεσα σε
+        εντολές χωρίς να επηρεάσουμε την λειτουργία του προγράμματος.
+      </p>
+      <div class="code-grid centered-code">
+        <pre><code class="java">// Σχόλιο γραμμής
+
+// Λάθος
+σχόλιο
+
+/*
+  Σχόλιο πολλαπλών
+  γραμμών
+*/
+
+int a = /* πέντε */ 5;
+</code></pre>
+      </div>
+      <p class="grid-col-span-2">
+        Τα σχόλια αυτά αγνοούνται από τον υπολογιστή και τα χρησιμοποιούμε για
+        να καταγράψουμε τι κάνουμε σε κάποια γραμμή κώδικα.
+      </p>
+    </div>
+  </article>
+  <article>
+    <h3>Τελεστές</h3>
+    <div class="content-grid">
+      <p class="grid-col-span-2">
+        Οι <strong>τελεστές</strong> είναι σύμβολα τα οποία χρησιμοποιούμε για
+        να “πειράξουμε” τις μεταβλητές. Ακολουθεί πίνακας με τα πιο βασικά
+        παραδείγματα.
+      </p>
+    </div>
+  </article>
+  <article>
+    <h3>Δομή Ελέγχου</h3>
+    <div class="content-grid">
+      <p class="grid-col-span-2">
+        Η <strong>δομή ελέγχου</strong> είναι από τα ποιο βασικά εργαλεία στον
+        προγραμματισμό. Βασιζόμαστε σε αυτή για την λογική του προγράμματος που
+        γράφουμε.
+      </p>
+      <div class="list grid-row-span-3">
+        <p>
+          Η δομή ελέγχου έχει τρεις μορφές, όπως αυτές φαίνονται στα τμήματα
+          κώδικα.
+        </p>
+        <ol>
+          <li>Την απλή. <code>if</code></li>
+          <li>Την απλή, με εναλλακτική. <code>if/else</code></li>
+          <li>Τη σύνθετη. <code>if/else if/else</code></li>
+        </ol>
+        <p>
+          Η συνθήκη που δέχεται η δομή ελέγχου καθορίζει ποιο μέρος της θα
+          εκτελεστεί όταν ο υπολογιστής διαβάζει το πρόγραμμα.<br /><br />
+          <strong>Αν</strong> η συνθήκη είναι
+          <strong>αληθής</strong> (<code>true</code>), εκτελείτε το πρώτο τμήμα
+          κώδικα, <strong>αλλιώς</strong> - αν υπάρχει - το δεύτερο. Στην
+          περίπτωση των σύνθετων δομών ελέχγου, πραγματοποιείται επίσης έλεγχος
+          των ενδιάμεσων συνθηκών.<br /><br />
+          Στην περίπτωση της δεύτερης και της τρίτης μορφής, εκτελείτε μόνο η
+          πρώτη αληθής συνθήκη και δεν γίνεται έλεγχος της επόμενης.<br /><br />
+          Ακολουθεί πρακτικό παράδειγμα χρήσης δομής ελέγχου.
+        </p>
+      </div>
+      <div class="code-grid">
+        <pre><code class="java">// Απλή δομή ελέγχου
+if (/* συνθήκη */) {
+  // κάνε κάτι
+}</code></pre>
+      </div>
+      <div class="code-grid">
+        <pre><code class="java">// Απλή δομή ελέγχου με εναλλακτική
+if (/* συνθήκη */) {
+  // κάνε κάτι
+}
+else {
+  // κάνε κάτι άλλο
+}</code></pre>
+      </div>
+      <div class="code-grid">
+        <pre><code class="java">// Σύνθετη δομή ελέγχου
+if (/* συνθήκη 1 */) {
+  // κάνε κάτι
+}
+else if (/* συνθήκη 2 */) {
+  // κάνε κάτι άλλο
+}
+else {
+  // κάνε κάτι άλλο
+}</code></pre>
+      </div>
+      <div class="code-grid grid-col-span-2">
+        <pre><code class="java">int number = 2;
+
+if (number > 3) {
+  System.out.println("Ο αριθμός είναι μεγαλύτερος του 3!");
+}
+else if (number < 3) {
+  System.out.println("Ο αριθμός είναι μικρότερος του 3!");
+}
+else {
+  System.out.println("Ο αριθμός είναι το 3!");
+}
+</code></pre>
+      </div>
+      <p class="grid-col-span-2">Απάντηση</p>
+      <div class="code-grid grid-col-span-2">
+        <pre><code class="bash">Ο αριθμός είναι μικρότερος του 3!</code></pre>
+      </div>
+      <p class="grid-col-span-2">
+        <strong>Bonus - Παρατήρησες κάτι καινούργιο; Μην τρομάζεις!</strong
+        ><br /><br />
+        Η μέθοδος <code>System.out.println()</code> χρησιμοποιείται στην Java
+        για την εκτύπωση δεδομένων στην κονσόλα.<br /><br />
+        Τι είναι η <strong>μέθοδος</strong>; Αυτο θα το δούμε παρακάτω στις
+        <strong>κλάσεις</strong>!
+      </p>
+    </div>
+  </article>
+  <article>
+    <h3>Δομές Επανάληψης</h3>
+    <div class="content-grid">
+      <p class="grid-col-span-2"></p>
     </div>
   </article>
 </section>
