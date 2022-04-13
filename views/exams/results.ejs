@@ -11,16 +11,12 @@
       <div>
         <% const answer = answers[e.selectName]; %>
         <label for="<%= e.selectId %>" class="exercise"><%= e.label %></label>
-        <div>
-          <input
-            class="<%= answer.class %>"
-            type="text"
-            value="<%= answer[answer.class] %>"
-            readonly
-          />
-          <input id="<%= e.selectId %>" class="correct-answer" type="text"
-          value="<%= answer["correct-answer"] %>" readonly>
-        </div>
+        <input
+          class="<%= answer.class %>"
+          type="text"
+          value="<%= answer[answer.class] %>"
+          readonly
+        />
       </div>
       <% } %>
     </div>
@@ -30,23 +26,16 @@
       <% for (const e of exam.exerciseTwo.questions) { %>
       <div>
         <p class="exercise"><%= e.pDescription %></p>
+        <% for (const o of e.checkBoxOptions) { %>
         <div>
-          <% for (const o of e.checkBoxOptions) { %>
-          <div>
-            <label for="<%= o.optionId %>"><%= o.label %></label>
-            <input
-              id="<%= o.optionId %>"
-              class="<%= answers[o.optionName].class %>"
-              type="text"
-            />
-            <% if (answers[o.optionName].class == "correct-answer") { %>
-            <input class="correct-answer" type="text" />
-            <% } else { %>
-            <input class="incorrect-answer" type="text" />
-            <% } %>
-          </div>
-          <% } %>
+          <label for="<%= o.optionId %>"><%= o.label %></label>
+          <input
+            id="<%= o.optionId %>"
+            class="<%= answers[o.optionName].class %>"
+            type="text"
+          />
         </div>
+        <% } %>
       </div>
       <% } %>
     </div>
@@ -57,16 +46,12 @@
       <div>
         <% const answer = answers[e.selectName]; %>
         <label for="<%= e.selectId %>" class="exercise"><%= e.label %></label>
-        <div>
-          <input
-            class="<%= answer.class %>"
-            type="text"
-            value="<%= answer[answer.class] %>"
-            readonly
-          />
-          <input id="<%= e.selectId %>" class="correct-answer" type="text"
-          value="<%= answer["correct-answer"] %>" readonly />
-        </div>
+        <input
+          class="<%= answer.class %>"
+          type="text"
+          value="<%= answer[answer.class] %>"
+          readonly
+        />
       </div>
       <% } %>
     </div>

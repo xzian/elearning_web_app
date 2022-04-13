@@ -34,11 +34,75 @@
       <div class="code-grid grid-col-span-2">
         <pre><code class="java">int myFirstInteger = 10;      // Ακέραια μεταβλητή
 double myFirstDouble = 15.4;  // Μεταβλητή κινητής υποδιαστολής
-bool myFirstBoolean = true;   // Λογική μεταβλητή
 char myFirstCharacter = 'J';  // Χαρακτήρας
+boolean myFirstBoolean = true;// Λογική μεταβλητή
 String myFirstString = "Java";// Λέξη / Συμβολοσειρά
 </code></pre>
       </div>
+      <p class="grid-col-span-2">
+        Κάθε πρωταρχικός τύπος μεταβλητής έχει ένα
+        <strong>εύρος αναπαράστασης</strong>. Αν υπερβεί αυτό το εύρος
+        <strong>υπερχειλίζει</strong>. Στον ακόλουθο πίνακα παρουσιάζονται τα
+        εύρη αναπαράστασης των πρωταρχικών (<strong>primitive</strong>) τύπων
+        μεταβλητών.<br /><br />
+        Παρατήρησε ότι ο τύπος <strong>String</strong> δεν ανήκει στους
+        primitive τύπους.
+      </p>
+      <div class="table-grid grid-col-span-2">
+        <table class="hljs">
+          <tr>
+            <th>Τύπος Δεδομένων</th>
+            <th>Εύρος αναπαράστασης</th>
+            <th>Bit</th>
+          </tr>
+          <tr>
+            <td>byte</td>
+            <td>-2<sup>7</sup> έως 2<sup>7</sup>-1</td>
+            <td>8</td>
+          </tr>
+          <tr>
+            <td>short</td>
+            <td>-2<sup>15</sup> έως 2<sup>15</sup>-1</td>
+            <td>16</td>
+          </tr>
+          <tr>
+            <td>int</td>
+            <td>-2<sup>31</sup> έως 2<sup>31</sup>-1</td>
+            <td>32</td>
+          </tr>
+          <tr>
+            <td>long</td>
+            <td>-2<sup>63</sup> έως 2<sup>63</sup>-1</td>
+            <td>64</td>
+          </tr>
+          <tr>
+            <td>float</td>
+            <td>-2<sup>-149</sup> έως (2-2<sup>-23</sup>)*2<sup>127</sup></td>
+            <td>32</td>
+          </tr>
+          <tr>
+            <td>double</td>
+            <td>-2<sup>-1024</sup> έως (2-2<sup>-52</sup>)*2<sup>1023</sup></td>
+            <td>64</td>
+          </tr>
+          <tr>
+            <td>char</td>
+            <td>0 έως 2<sup>16</sup>-1</td>
+            <td>16</td>
+          </tr>
+          <tr>
+            <td>boolean</td>
+            <td>true / false</td>
+            <td>1</td>
+          </tr>
+        </table>
+      </div>
+      <p class="grid-col-span-2">
+        Όπως προαναφέραμε, αν μια μεταβλητή υπερβεί το εύρος του τύπου της
+        υπερχειλίζει. Στην Java, η υπερχείληση προκαλεί σφάλμα. Για παράδειγμα,
+        δεν μπορούμε να δηλώσουμε ένα <code>byte</code> με τιμές μικρότερες του
+        <code>-128</code> και τιμές μεγαλύτερες του <code>127</code>.
+      </p>
       <p class="grid-col-span-2">
         <strong>Bonus - Παρατήρησες τους ειδικούς χαρακτήρες;</strong
         ><br /><br />
@@ -82,9 +146,116 @@ int a = /* πέντε */ 5;
     <div class="content-grid">
       <p class="grid-col-span-2">
         Οι <strong>τελεστές</strong> είναι σύμβολα τα οποία χρησιμοποιούμε για
-        να “πειράξουμε” τις μεταβλητές. Ακολουθεί πίνακας με τα πιο βασικά
-        παραδείγματα.
+        να “πειράξουμε” τις μεταβλητές. Ακολουθεί πίνακας με μερικούς από τους
+        ποιο βασικούς.
       </p>
+      <div class="table-grid grid-col-span-2">
+        <table class="hljs">
+          <tr>
+            <th>Τελεστής</th>
+            <th>Περιγραφή</th>
+            <th>Χρήση</th>
+          </tr>
+          <tr>
+            <td>=</td>
+            <td>
+              Τελεστής εκχώρησης - εκχωρεί την τιμή από την αριστερή του μεριά
+              στην μεταβλητή που βρίσκεται στα δεξιά του
+            </td>
+            <td><code>int a = b;</code></td>
+          </tr>
+          <tr>
+            <td>+</td>
+            <td>
+              Τελεστής πρόσθεσης - προσθέτει δύο αριθμητικές τιμές. Μπορεί να
+              χρησιμοποιηθεί και για να ενώσει δύο <code>String</code>
+            </td>
+            <td><code>int c = a + b;</code></td>
+          </tr>
+          <tr>
+            <td>-</td>
+            <td>
+              Αριθμητικός τελεστής αφαίρεσης - αφαιρεί την τιμή του δεξιού
+              μέλους από αυτή στο αριστερό
+            </td>
+            <td><code>int c = a - b;</code></td>
+          </tr>
+          <tr>
+            <td>*</td>
+            <td>
+              Αριθμητικός τελεστής γινομένου - πολλαπλασιάζει μεταξύ τους δύο
+              τιμές
+            </td>
+            <td><code>int c = a * b;</code></td>
+          </tr>
+          <tr>
+            <td>/</td>
+            <td>
+              Αριθμητικός τελεστής διαίρεσης - διαιρεί την τιμή στο αριστερό
+              μέλος κατά όσες φορές ορίζει η τιμή στο δεξί
+            </td>
+            <td><code>int c = a / b;</code></td>
+          </tr>
+          <tr>
+            <td>==</td>
+            <td>
+              Λογικός τελεστής ισότητας - συγκρίνει δύο τιμές μεταξύ τους και
+              επιστρέφει
+              <code>true</code> αν είναι ίσες, αλλιώς επιστρέφει
+              <code>false</code>
+            </td>
+            <td>boolean c = a == b;</td>
+          </tr>
+          <tr>
+            <td>!=</td>
+            <td>
+              Λογικός τελεστής διαφοράς - συγκρίνει δύο τιμές μεταξύ τους και
+              επιστρέφει
+              <code>false</code> αν είναι ίσες, αλλιώς επιστρέφει
+              <code>true</code>
+            </td>
+            <td>boolean c = a != b;</td>
+          </tr>
+          <tr>
+            <td><=</td>
+            <td>
+              Λογικός τελεστής ανισότητας (μικρότερο ή ίσο) - συγκρίνει δύο
+              τιμές μεταξύ τους και επιστρέφει
+              <code>true</code> αν είναι ίσες ή αν αυτή στα δεξιά είναι
+              μικρότερη, αλλιώς επιστρέφει <code>false</code>. Ομοίως
+              λειτουργουν και οι τελεστές (<code><, >, >=</code>)
+            </td>
+            <td>boolean c = a <= b;</td>
+          </tr>
+          <tr>
+            <td>&&</td>
+            <td>
+              Λογικός τελεστής "ΚΑΙ" - επιστρέφει <code>true</code> αν
+              <strong>και τα δύο</strong> μέλη είναι <code>true</code>, αλλιώς
+              επιστρέφει <code>false</code>
+            </td>
+            <td>boolean c = a && b;</td>
+          </tr>
+          <tr>
+            <td>||</td>
+            <td>
+              Λογικός τελεστής "Η (διαζευκτικό)" - επιστρέφει
+              <code>false</code> αν <strong>και τα δύο</strong> μέλη είναι
+              <code>false</code>, αλλιώς επιστρέφει <code>true</code>
+            </td>
+            <td>boolean c = a || b;</td>
+          </tr>
+          <tr>
+            <td>!</td>
+            <td>
+              Λογικός τελεστής "ΟΧΙ (αντιστροφέας)" - επιστρέφει
+              <code>true</code> αν η τιμή είναι <code>false</code>, αλλιώς
+              επιστρέφει <code>true</code>
+            </td>
+            <td>boolean c = !a;</td>
+          </tr>
+        </table>
+      </div>
     </div>
   </article>
   <article>
@@ -176,7 +347,112 @@ else {
   <article>
     <h3>Δομές Επανάληψης</h3>
     <div class="content-grid">
-      <p class="grid-col-span-2"></p>
+      <p class="grid-col-span-2">
+        Με πολύ απλά λόγια, μια δομή επανάληψης περιέχει μια διαδικασία που
+        επαναλαμβάνεται.<br /><br />
+        Η Java έχει τρεις βασικές δομές επανάληψης: την <code>for</code>, την
+        <code>while</code>, και την <code>do - while</code>. Κάθε μια από αυτές
+        για να δουλέψει χρειάζεται μια συνθήκη. Στην περίπτωση των δομών
+        <code>while</code> και <code>do - while</code> οι συνθήκες είναι όπως
+        αυτές που είδαμε στις δομές ελέγχου, ενώ στην δομή
+        <code>for</code> διαφέρει λίγο. Η πιο συνηθισμένη συνθήκη της δομής
+        <code>for</code> έχει αυτή τη μορφή
+        <code>for(int i = 0; i < end; i++)</code>.
+      </p>
+      <p>
+        Ας δούμε αυτό το παράδειγμα για την δομή <code>for</code>, για να την
+        κατανοήσουμε καλύτερα.<br /><br />
+        Η συνθήκη χωρίζεται σε τρία μέρη με το semicolon, το οποίο έχουμε
+        αναφέρει πως χωρίζει εντολές μεταξύ τους.<br /><br />
+        Στο πρώτο μέρος αρχικοποιούμε μια μεταβλητή
+        <code>i</code> με την τιμή <code>0</code>.<br />
+        Στο δεύτερο μέρος ορίζουμε μια συνθήκη όπως αυτές που είδαμε στις δομές
+        ελέγχου. Αν η συνθήκη είναι <code>true</code> η δομή επανάληψης
+        εκτελείται.<br />
+        Και, τέλος στο τρίτο μέρος κάνουμε μία πράξη - το βήμα της επανάληψης.
+        Αφού εκτελεστεί η δομή, το <code>i</code> θα πάρει την τιμή αυτή που
+        ορίζει η πράξη στο βήμα.
+      </p>
+      <div class="code-grid centered-code">
+        <pre><code class="java">/*
+for (αρχή; συνθήκη; βήμα) {
+  ενέργειες
+}
+*/
+
+// Η δομή θα εκτελεστεί 10 φορές
+for (int i = 0; i < 10; i = i + 1) {
+  System.out.println("κέικ");
+}
+
+// Η δομή θα εκτελεστεί 5 φορές
+for (int i = 0; i < 10; i = i + 2) {
+  System.out.println("μπέικιν-πάουντερ")
+}
+</code></pre>
+      </div>
+      <p class="grid-col-span-2">
+        Η δομές <code>while</code> και <code>do - while</code> λειτουργούν με
+        παρόμοιο τρόπο. Ωστόσο, και για τις δύο χρειαζόμαστε μια μεταβλητή που
+        θα χρησιμοποίησουμε στην συνθήκη, και θα έχει δηλωθεί έξω από τη δομή,
+        την συνθήκη, και κάποιο βήμα εντός της επανάληψης.
+      </p>
+      <p>
+        Η δομή <code>while</code> πραγματοποιεί έλεγχο της συνθήκης πριν
+        εκτελέσει τον κώδικα στο εσωτερικό της, πράγμα που σημαίνει ότι αν η
+        συνθήκη είναι εξαρχής <code>false</code> ο κώδικας δεν θα εκτελεστεί
+        ποτέ.
+      </p>
+      <div class="code-grid centered-code">
+        <pre><code class="java">int i = 0;
+while (i < 10) {
+  System.out.println("Hello");
+  i = i + 1;
+}</code></pre>
+      </div>
+      <p>
+        Η δομή <code>do - while</code> λειτουργεί σχεδόν με τον ίδιο τρόπο όπως
+        η <code>while</code> αλλά, ο κώδικας πάντα θα εκτελείται τουλάχιστον μια
+        φορά. Γιατί; Πολύ απλα, επειδή ο έλεγχος της συνθήκης γίνεται στο τέλος
+        της κάθε εκτέλεσης.
+      </p>
+      <div class="code-grid centered-code">
+        <pre><code class="java">int i = 0;
+do {
+  System.out.println("World")
+  i = i + 1;
+} while (i < 10);</code></pre>
+      </div>
+      <p>
+        <strong>Προσοχή</strong>, αν ή συνθήκη είναι πάντα αληθής σε μια
+        επανάληψη, τότε έχουμε πρόβλημα
+        <strong>ατέρμων βρόχου</strong> (infinite loop), μια επαναληπτική
+        διαδικασία που δεν τελειώνει ποτέ!
+      </p>
+      <div class="code-grid centered-code">
+        <pre><code class="java">while (true) {
+  System.out.println("Infinite Loop!")
+}</code></pre>
+      </div>
+      <p class="grid-col-span-2">
+        <strong
+          >Bonus - Τελεστές <code>++</code>, <code>--</code>, <code>+=</code>,
+          <code>-=</code></strong
+        ><br /><br />
+        Πολλές φορές, στις δομές επανάληψης, και κυρίως την <code>for</code>,
+        στο βήμα μπορεί να δούμε έναν από τους παραπάνω τελεστές. Οι τελεστές
+        <code>++</code> και <code>--</code> είναι για αύξηση ή μείωση μιας
+        αριθμητικής τιμής κατά 1, ενώ οι τελεστές <code>+=</code> και
+        <code>-=</code> είναι για αύξση ή μείωση μιας αριθμητικής τιμής κατά
+        κάποια τιμή που ορίζουμε εμείς.<br /><br />
+
+        Για παράδειγμα, έστω <code>int num = 1;</code>, τότε<br /><br />
+        <code>num++; //num = 2</code><br />
+        <code>num--; //num = 1, μείωση κατά 1 από το παραπάνω παράδειγμα</code
+        ><br />
+        <code>num += 3; //num = 4</code><br />
+        <code>num -= 5; //num = -1</code>
+      </p>
     </div>
   </article>
 </section>

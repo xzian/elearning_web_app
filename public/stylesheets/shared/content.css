@@ -90,3 +90,30 @@ h3 {
 .grid-row-span-3 {
   grid-row: span 3;
 }
+
+.table-grid {
+  display: grid;
+  place-items: center;
+}
+
+.table-grid {
+  background-color: var(--bg-content-paragraph);
+  padding: 10px;
+}
+
+.table-grid > table {
+  color: white;
+  padding: 1rem;
+  width: 100%;
+  text-align: left;
+}
+
+.table-grid > table tr > td {
+  padding-inline-start: 1rem;
+  border: 1px solid white;
+}
+
+.table-grid > table tr > td:nth-child(2) {
+  max-width: 35ch;
+  padding-inline-end: 1rem;
+}
