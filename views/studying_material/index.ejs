@@ -457,52 +457,276 @@ do {
   </article>
 </section>
 <div class="fade-in popup-msg">
-  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque, impedit.
+  <p class="centered-text">
+    Η επόμενη ενότητα αφορά τις <strong>κλάσεις</strong>.
+  </p>
+  <p class="centered-text">
+    Οι κλάσεις είναι ένα πολύ σημαντικό τμήμα της Java, και είναι σημαντικό να
+    τις κατανοήσεις.
+  </p>
+  <p class="centered-text">Καλή τύχη!</p>
 </div>
 <section class="content bg-clr-contrast unit-theory">
-  <h2 class="fg-clr-light">Unit 2</h2>
+  <h2 class="fg-clr-light">Ενότητα 2 - Κλάσεις, Μέθοδοι, Αντικείμενα</h2>
   <article>
-    <p>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi officia
-      quidem iure minima debitis quam quis quasi numquam rem, odit earum
-      repellat quo delectus mollitia aperiam praesentium reprehenderit omnis
-      quibusdam cupiditate eos ex iusto? Id sit culpa tenetur voluptatum!
-      Doloremque amet, aspernatur velit error quam facilis autem consequuntur
-      mollitia beatae adipisci unde rerum reprehenderit eligendi repellat
-      deleniti dolores pariatur sit officia natus qui dicta at a. Totam illo
-      expedita sit unde, saepe harum enim debitis alias vitae architecto nostrum
-      accusantium delectus, reiciendis repellendus libero perferendis
-      exercitationem vero tenetur nam blanditiis minima? Id tempora atque
-      assumenda illum temporibus!
-    </p>
+    <div class="content-grid">
+      <p>
+        Μια κλάση στη Java είναι ένα πρότυπο που χρησιμοποιείται για τη
+        δημιουργία αντικειμένων και τον ορισμό τύπων και μεθόδων δεδομένων
+        αντικειμένων. Οι κλάσεις είναι κατηγορίες και τα αντικείμενα είναι
+        στοιχεία σε κάθε κατηγορία. Όλα τα αντικείμενα κλάσης πρέπει να έχουν
+        τις βασικές ιδιότητες κλάσης.
+      </p>
+      <div class="code-grid centered-code">
+        <pre><code class="java">class JavaClass {
+// Αυτή είναι μια κλάση
+}</code></pre>
+      </div>
+    </div>
+  </article>
+  <article>
+    <h3>Μέθοδοι</h3>
+    <div class="content-grid">
+      <p class="grid-col-span-2">
+        Μια μέθοδος είναι ένα μπλοκ κώδικα που εκτελείται μόνο όταν καλείται.
+        Μπορείτε να μεταβιβάσετε δεδομένα, γνωστά ως παράμετροι, σε μια μέθοδο.
+        Οι μέθοδοι χρησιμοποιούνται για την εκτέλεση συγκεκριμένων ενεργειών και
+        είναι επίσης γνωστές ως συναρτήσεις. Μπορεί να επιστρέφουν κάποια τιμή
+        μετά το πέρας της εκτέλεσης τους. Οι μέθοδοι που έχουν τύπο
+        <code>void</code> δεν επιστρέφουν καμία τιμή, ενώ εκείνες που έχουν τύπο
+        πρέπει οπωσδήποτε να επιστρέφουν μια τιμή αυτού του τύπου.
+      </p>
+      <div class="code-grid">
+        <pre><code class="java">void JavaMethodA() {
+  // Αυτή είναι μια μέθοδος
+  // Δεν επιστρέφει τίποτα
+}</code></pre>
+      </div>
+      <div class="code-grid">
+        <pre><code class="java">int JavaMethodB() {
+  // Αυτή είναι μια μέθοδος
+  // Επιστρέφει έναν ακέραιο
+  return 1;
+}</code></pre>
+      </div>
+      <p class="grid-col-span-2">
+        Η κύρια μέθοδος Java είναι το σημείο εισόδου οποιουδήποτε προγράμματος
+        java. Η σύνταξή του είναι πάντα
+        <code>public static void main(String[] args)</code>. Μπορείτε να
+        αλλάξετε μόνο το όνομα του ορίσματος του πίνακα <code>String</code>, για
+        παράδειγμα μπορείτε να αλλάξετε τα <code>args</code> σε
+        <code>myStringArgs</code>.
+      </p>
+      <div class="code-grid grid-col-span-2">
+        <pre><code class="java">class ExampleClass {
+  public static void main(String[] args) {
+    System.out.println("Hello, world!");
+  }
+}</code></pre>
+      </div>
+      <p class="grid-col-span-2">
+        Οι <strong>getters</strong> και οι
+        <strong>setters</strong> χρησιμοποιούνται για την προστασία των
+        δεδομένων σας, ιδιαίτερα κατά τη δημιουργία κλάσεων. Για κάθε μεταβλητή
+        της κλάσης, μια μέθοδος getter επιστρέφει την τιμή της ενώ μια μέθοδος
+        setter ορίζει ή ενημερώνει την τιμή της. Συνήθως βλέπουμε getters και
+        setters όταν οι μεταβλητές-μέλη της κλάσης δηλώνονται ως
+        <code>private</code> ή <code>protected</code>.
+      </p>
+    </div>
+  </article>
+  <article>
+    <h3>Παράδειγμα</h3>
+    <div class="content-grid">
+      <div class="code-grid grid-col-span-2">
+        <pre><code class="java">import java.util.ArrayList;
+import java.util.Scanner;
+
+public class CakeRecipe {
+  public static void main(String[] args) {
+    MethodForRecipe();
+  }
+
+  static void MethodForRecipe() {
+    Scanner sc = new Scanner(System.in);
+    ArrayList&ltString&gt recipe = new ArrayList<>();
+    String line;
+    System.out.println("Δώσε τα υλικά της συνταγής (0 για τέλος"):;
+    while(sc.hasNext()){  // Διαβάζει δεδομένα εισόδου από τον χρήστη
+      line = sc.nextLine(); // Αποθηκεύει τα δεδομένα σε μεταβλητή
+      if(line.equals("0"))
+          break;
+      System.out.println("Επόμενο υλικό:");
+      recipe.add(line); // προσθέτει τα δεδομένα στο ArrayList
+    }
+    System.out.println("Τα υλικά είναι: " + recipe);
+  }
+}</code></pre>
+      </div>
+
+      <p class="grid-col-span-2">
+        <strong>Bonus - ArrayList, Scanner <br /><br /></strong>
+        Το <code>ArrayList</code> αντικείμενο της ομώνυμης κλάσης προσφέρει
+        δυναμικούς πίνακες, δηλαδή μια δομή δεδομένων που μπορεί να αποθηκεύση
+        πολλά δεδομένα του ίδιου τύπου. <br /><br />
+        Το <code>Scanner</code> αντικείμενο της ομώνυμης κλάσης χρησιμοποιείται
+        για το "διάβασμα" δεδομένων από κάποια πηγή, π.χ. το πληκτρολόγιο
+        (<code>System.In</code>). <br /><br />
+        Θα μιλήσουμε για αντικείμενα και παρακάτω.
+      </p>
+    </div>
+  </article>
+  <article>
+    <h3>Κατασκευαστές και αντικείμενα</h3>
+    <div class="content-grid">
+      <p class="grid-col-span-2">
+        Ένας κατασκευαστής στην Java είναι μια ειδική μέθοδος που
+        χρησιμοποιείται για την προετοιμασία αντικειμένων. Ο κατασκευαστής
+        καλείται όταν δημιουργείται ένα αντικείμενο μιας κλάσης.
+      </p>
+      <p class="grid-col-span-2">
+        Default Κατασκευαστής (Default Constructor) λέγεται ο προεπιλεγμένος
+        κατασκευαστής που δημιουργείται αυτόματα από το πρόγραμμα, ή που
+        ορίζεται από τον προγραμματιστή. Ο default κατασκευαστής δεν παίρνει
+        παραμέτρους.
+      </p>
+      <p class="grid-col-span-2">
+        Overloaded Κατασκευαστής (Overloaded Constructor) είναι ο κατασκευαστής
+        που δημιουργείται με παραμέτρους.
+      </p>
+      <p class="grid-col-span-2">
+        Ένα πρόγραμμα μπορεί να περιέχει πολλούς διαφορετικούς κατασκευαστές.
+      </p>
+      <p class="grid-col-span-2">
+        Τα αντικείμενα στη Java είναι στιγμιότυπα κλάσεων. Για παράδειγμα, ας
+        υποθέσουμε ότι το Bicycle είναι μια κλάση, τότε για να δημιουργήσουμε
+        ένα αντικέιμενο (object)/στιγμιότυπο (instance) της κλάσης αυτής
+        γράφουμε:
+        <code>Bicycle bmx = new Bicycle();</code>
+      </p>
+    </div>
   </article>
 </section>
 <div class="fade-in popup-msg">
-  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque, impedit.
+  <p class="centered-text">
+    Η επόμενη ενότητα αφορά τις έννοιες
+    <strong>κληρονομικότητα, ενθυλάκωση & διεπαφές</strong>.
+  </p>
+  <p class="centered-text">
+    Οι παραπάνω έννοιες περιγράφουν κάποια πολύ σημαντικά πεδία του
+    αντικειμενοστραφή προγραμματισμού και θέλουν πολύ προσοχή και εξάσκηση για
+    να γίνουν κατανοητές!
+  </p>
+  <p class="centered-text">Καλή τύχη!</p>
 </div>
 <section class="content bg-clr-contrast unit-theory">
   <h2 class="fg-clr-light">Unit 3</h2>
   <article>
-    <p>
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores
-      itaque quidem dolorum pariatur vero adipisci dignissimos ea officia
-      necessitatibus harum exercitationem dolor tenetur amet minus quibusdam
-      velit et atque repellat, molestiae sunt quod modi sint! Possimus pariatur
-      corrupti non minus. Repudiandae itaque doloribus atque dolorem animi
-      fugiat asperiores voluptates dolor, alias perferendis officiis at
-      recusandae dicta laboriosam necessitatibus veritatis, iure voluptatem
-      error nemo quam quod obcaecati reprehenderit id. Vero cum dolores,
-      expedita aut esse excepturi, repudiandae numquam aperiam delectus ab illo
-      voluptatum! Saepe eaque delectus esse, eius molestiae numquam aspernatur
-      culpa nemo? Quidem velit ex, neque a recusandae voluptatum amet suscipit
-      cupiditate saepe facere nisi molestias obcaecati ipsam perspiciatis?
-      Delectus sapiente ullam neque commodi hic quae labore, culpa, aliquid fuga
-      magni facere natus beatae tempore cum consequatur qui iure nesciunt
-      consequuntur. Similique deserunt placeat rerum optio neque aut
-      perspiciatis doloremque in voluptate voluptatum reprehenderit, sit
-      officiis ducimus doloribus, libero ipsa, molestias atque nihil aliquid
-      iste ad repellat! Commodi vero odio, amet doloremque ad dolores. Id, quasi
-      delectus.
-    </p>
+    <h3>Κληρονομικότητα</h3>
+    <div class="content-grid">
+      <p class="grid-col-span-2">
+        Η κληρονομικότητα είναι ένα από τα βασικά χαρακτηριστικά του OOP που μας
+        επιτρέπει να δημιουργήσουμε μια νέα κλάση από μια υπάρχουσα κλάση. Η νέα
+        κλάση που δημιουργείται είναι γνωστή ως υποκλάση (παιδική ή παράγωγη
+        κλάση) και η υπάρχουσα κλάση από την οποία προέρχεται η θυγατρική κλάση
+        είναι γνωστή ως υπερκλάση (γονική ή βασική κλάση).
+      </p>
+    </div>
+  </article>
+  <article>
+    <h3>Ενθυλάκωση</h3>
+    <div class="content-grid">
+      <p class="grid-col-span-2">
+        Η ενθυλάκωση είναι ένα από τα βασικά χαρακτηριστικά του
+        αντικειμενοστρεφούς προγραμματισμού. Η ενθυλάκωση αναφέρεται στη
+        ομαδοποίηση πεδίων και μεθόδων μέσα σε μια κλάση. Εμποδίζει τις
+        εξωτερικές κλάσεις να έχουν πρόσβαση και να αλλάζουν πεδία και μεθόδους
+        μιας κλάσης. Αυτό βοηθά επίσης στην επίτευξη απόκρυψης δεδομένων.
+      </p>
+    </div>
+  </article>
+  <article>
+    <h3>Διεπαφές</h3>
+    <div class="content-grid">
+      <p class="grid-col-span-2">
+        Μια διεπαφή στη γλώσσα προγραμματισμού Java ορίζεται ως ένας αφηρημένος
+        τύπος που χρησιμοποιείται για τον καθορισμό της συμπεριφοράς μιας
+        κλάσης. Μια διεπαφή σε Java είναι ένα προσχέδιο μιας κλάσης. Μια διεπαφή
+        Java περιέχει στατικές σταθερές και αφηρημένες μεθόδους. Η διεπαφή στη
+        Java είναι ένας μηχανισμός για την επίτευξη αφαίρεσης.
+      </p>
+    </div>
+  </article>
+  <article>
+    <h3>Παράδειγμα</h3>
+    <div class="content-grid">
+      <p class="grid-col-span-2">Αρχείο <code>canine.java</code></p>
+      <div class="code-grid grid-col-span-2">
+        <pre><code class="java">public class Canine {
+  public static void main(String[] args) {
+    Dog barky = new Dog();
+    barky.bark();
+    barky.eat();
+
+    PitBull pit = new PitBull();
+    pit.bark();
+    pit.eat();
+  }
+}</code></pre>
+      </div>
+      <p class="grid-col-span-2">Αρχείο <code>dog.java</code></p>
+      <div class="code-grid grid-col-span-2">
+        <pre><code class="java">class Dog extends Wolf {
+  boolean wildAnimal = false;
+  Dog() {}
+}</code></pre>
+      </div>
+      <p class="grid-col-span-2">Αρχείο <code>pitbull.java</code></p>
+      <div class="code-grid grid-col-span-2">
+        <pre><code class="java">class PitBull implements WolfInterface{
+  boolean wildAnimal = false;
+  PitBull() {}
+
+  @Override
+  public void bark() {
+    System.out.println("Woof");
+  }
+
+  @Override
+  public void eat() {
+    System.out.println("Yum yum");
+  }
+}</code></pre>
+      </div>
+      <p class="grid-col-span-2">Αρχείο <code>wolf.java</code></p>
+      <div class="code-grid grid-col-span-2">
+        <pre><code class="java">class Wolf{
+  int legs;
+  boolean wildAnimal = true;
+  Wolf(int legs) {
+    this.legs = legs;
+  }
+
+  Wolf() {
+    this.legs = 4;
+  }
+
+  void bark() {
+    System.out.println("Extended from wolf class");
+  }
+
+  void eat(){
+    System.out.println("Extended from wolf class");
+  }
+}</code></pre>
+      </div>
+      <p class="grid-col-span-2">Αρχείο <code>wolfinterface.java</code></p>
+      <div class="code-grid grid-column-span-2">
+        <pre><code class="java">interface WolfInterface {
+  void bark();
+  void eat();
+}</code></pre>
+      </div>
+    </div>
   </article>
 </section>
