@@ -1,0 +1,96 @@
+<% var answers; for (let i = 0; i < user.exams.length; i++) { if
+(user.exams[i].unit == exam.unit) { answers = user.exams[i].answers; break; } }
+%>
+<div>
+  Η
+  <input
+    type="text"
+    style="max-width: 11ch"
+    class="<%= answers.ex4a.class %>"
+    value="<%= answers.ex4a[answers.ex4a.class] %>"
+    readonly
+  />
+  είναι μια μέθοδος
+  <input
+    type="text"
+    style="max-width: 11ch"
+    class="<%= answers.ex4b.class %>"
+    value="<%= answers.ex4b[answers.ex4b.class] %>"
+    readonly
+  />
+  των μελών μιας κλάσης από άλλες κλάσεις, και η ομαδοποίηση τους σε μια ενιαία
+  μονάδα. Για να επιτευχθεί χρείαζεται να δηλώσουμε τα επιθυμητά μέλη της κλάσης
+  ως
+  <input
+    type="text"
+    style="max-width: 7ch"
+    class="<%= answers.ex4c.class %>"
+    value="<%= answers.ex4c[answers.ex4c.class] %>"
+    readonly
+  />
+  ή
+  <input
+    type="text"
+    style="max-width: 9ch"
+    class="<%= answers.ex4d.class %>"
+    value="<%= answers.ex4d[answers.ex4d.class] %>"
+    readonly
+  />. Αυτά τα μέλη μπορεί να είναι
+  <input
+    type="text"
+    style="max-width: 12ch"
+    class="<%= answers.ex4e.class %>"
+    value="<%= answers.ex4e[answers.ex4e.class] %>"
+    readonly
+  />
+  εκτός της κλάσης με την χρήση
+  <input
+    type="text"
+    style="max-width: 9ch"
+    class="<%= answers.ex4f.class %>"
+    value="<%= answers.ex4f[answers.ex4f.class] %>"
+    readonly
+  />.
+</div>
+<div>
+  Μια διεπαφή είναι μια πλήρως
+  <input
+    type="text"
+    style="max-width: 10ch"
+    class="<%= answers.ex4g.class %>"
+    value="<%= answers.ex4g[answers.ex4g.class] %>"
+    readonly
+  />
+  κλάση. Περιλαμβάνει μια ομάδα μεθόδων οι οποίες είναι χωρίς
+  <input
+    type="text"
+    style="max-width: 10ch"
+    class="<%= answers.ex4h.class %>"
+    value="<%= answers.ex4h[answers.ex4h.class] %>"
+    readonly
+  />. Χρησιμοποιούμε τη λέξη-κλειδί
+  <input
+    type="text"
+    style="max-width: 8ch"
+    class="<%= answers.ex4i.class %>"
+    value="<%= answers.ex4i[answers.ex4i.class] %>"
+    readonly
+  />
+  για να δημιουργήσουμε μια διεπαφή στη Java. Για παράδειγμα: <br /><br />
+  <code
+    ><input
+      type="text"
+      style="max-width: 8ch"
+      class="<%= answers.ex4j.class %>"
+      value="<%= answers.ex4j[answers.ex4j.class] %>"
+      readonly
+    />
+    ClassName
+    <pre>
+{
+public void MethodA(); 
+public void MethodB(); 
+}</pre
+    >
+  </code>
+</div>

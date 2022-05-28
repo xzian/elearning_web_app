@@ -11,8 +11,8 @@
     <span>Incorrect answers:</span> <span><%= e.incorrect %></span>
     <span>Average:</span>
     <span
-      ><%= (10 * e.correct / (e.submitted + e.unanswered)).toPrecision(1)
-      %></span
+      ><%= (10 * e.correct / e.solutions/*(e.submitted +
+      e.unanswered)*/).toPrecision(2) %></span
     >
     <a href="/exams/<%= e.unit %>" class="grid-col-span-2 retry-exam"
       >Try again?</a

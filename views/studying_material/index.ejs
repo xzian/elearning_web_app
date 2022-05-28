@@ -478,7 +478,7 @@ do {
         τις βασικές ιδιότητες κλάσης.
       </p>
       <div class="code-grid centered-code">
-        <pre><code class="java">class JavaClass {
+        <pre><code class="java">class Cake {
 // Αυτή είναι μια κλάση
 }</code></pre>
       </div>
@@ -497,13 +497,13 @@ do {
         πρέπει οπωσδήποτε να επιστρέφουν μια τιμή αυτού του τύπου.
       </p>
       <div class="code-grid">
-        <pre><code class="java">void JavaMethodA() {
+        <pre><code class="java">void AddSugar() {
   // Αυτή είναι μια μέθοδος
   // Δεν επιστρέφει τίποτα
 }</code></pre>
       </div>
       <div class="code-grid">
-        <pre><code class="java">int JavaMethodB() {
+        <pre><code class="java">int GetEggs() {
   // Αυτή είναι μια μέθοδος
   // Επιστρέφει έναν ακέραιο
   return 1;
@@ -518,9 +518,9 @@ do {
         <code>myStringArgs</code>.
       </p>
       <div class="code-grid grid-col-span-2">
-        <pre><code class="java">class ExampleClass {
+        <pre><code class="java">class Cake {
   public static void main(String[] args) {
-    System.out.println("Hello, world!");
+    System.out.println("CAKE CAKE CAKE!");
   }
 }</code></pre>
       </div>
@@ -579,30 +579,70 @@ public class CakeRecipe {
   <article>
     <h3>Κατασκευαστές και αντικείμενα</h3>
     <div class="content-grid">
-      <p class="grid-col-span-2">
+      <p>
         Ένας κατασκευαστής στην Java είναι μια ειδική μέθοδος που
-        χρησιμοποιείται για την προετοιμασία αντικειμένων. Ο κατασκευαστής
-        καλείται όταν δημιουργείται ένα αντικείμενο μιας κλάσης.
+        χρησιμοποιείται για την προετοιμασία και την αρχικοποίηση των
+        μεταβλητών-μέλων ενώς αντικειμένου και καλείται όταν δημιουργείται ένα
+        αντικείμενο μιας κλάσης, το οποίο γίνεται με τον ίδιο τρόπο που δίνουμε
+        τύπο σε μια μεταβλητή. Πχ. <br /><br />
+        <code>Cake birthdayCake = new Cake();</code>
       </p>
+      <div class="code-grid">
+        <pre><code class="java">public class Cake {
+  public Cake() {
+    /*
+    Κατασκευαστής της 
+    κλάσης Cake
+    */
+  }
+}</code></pre>
+      </div>
       <p class="grid-col-span-2">
         Default Κατασκευαστής (Default Constructor) λέγεται ο προεπιλεγμένος
         κατασκευαστής που δημιουργείται αυτόματα από το πρόγραμμα, ή που
         ορίζεται από τον προγραμματιστή. Ο default κατασκευαστής δεν παίρνει
-        παραμέτρους.
+        παραμέτρους. (βλ. τον κατασκευαστή της κλάσης Cake)
       </p>
-      <p class="grid-col-span-2">
+      <p>
         Overloaded Κατασκευαστής (Overloaded Constructor) είναι ο κατασκευαστής
-        που δημιουργείται με παραμέτρους.
+        που δημιουργείται με παραμέτρους. Αν θέλουμε για παράδειγμα να ορίζουμε
+        κάποιες παραμέτρους με βάση τα στοιχεία εισόδου ενώς χρήστη, μπορούμε να
+        χρησιμοποίησουμε Overloaded Κατασκευαστές. <br /><br />
+        Πχ. <br /><br />
+        <code>Cake birthdayCake = new Cake(typeOfCake);</code> <br /><br />
+        Όπου η μεταβλητή typeOfCake δηλώνεται κάπου στο πρόγραμμα και κρατάει
+        μια τιμή που έδωσε ο χρήστης.
+      </p>
+      <div class="code-grid">
+        <pre><code class="java">public class Cake {
+  private String cakeType;
+
+  // Default
+  public Cake() {
+    this.cakeType = "vanilla";
+  }
+
+  // Overloaded
+  public Cake(String type) {
+    this.cakeType = type;
+  }
+}</code></pre>
+      </div>
+      <p class="grid-col-span-2">
+        Όπως φαίνεται από το προηγούμενο τμήμα κώδικα, ένα πρόγραμμα μπορεί να
+        περιέχει πολλούς διαφορετικούς κατασκευαστές και κάθε φορά καλείται
+        αυτός που αντιστοιχεί στον κώδικα που έχουμε γράψει.
       </p>
       <p class="grid-col-span-2">
-        Ένα πρόγραμμα μπορεί να περιέχει πολλούς διαφορετικούς κατασκευαστές.
+        Τα αντικείμενα στη Java είναι στιγμιότυπα κλάσεων. Για παράδειγμα, για
+        να δημιουργήσουμε ένα αντικέιμενο (object)/στιγμιότυπο (instance) μιας
+        κλάσης γράφουμε: <br /><br />
+        <code>Cake birthdayCake = new Cake();</code>
       </p>
       <p class="grid-col-span-2">
-        Τα αντικείμενα στη Java είναι στιγμιότυπα κλάσεων. Για παράδειγμα, ας
-        υποθέσουμε ότι το Bicycle είναι μια κλάση, τότε για να δημιουργήσουμε
-        ένα αντικέιμενο (object)/στιγμιότυπο (instance) της κλάσης αυτής
-        γράφουμε:
-        <code>Bicycle bmx = new Bicycle();</code>
+        <strong>Bonus - this</strong><br /><br />
+        Το <code>this</code> keyword χρησιμοποείται εντώς των κλάσεων όταν
+        θέλουμε να αναφερθούμε αποκλειστικά σε μέλη αυτής της κλάσης.
       </p>
     </div>
   </article>

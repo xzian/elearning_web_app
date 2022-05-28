@@ -1,4 +1,5 @@
 const Answer = require("../models/answer");
+const exam = require("../models/exam");
 const Exam = require("../models/exam");
 const User = require("../models/user");
 
@@ -19,12 +20,14 @@ async function compareAnswers(submittedAnswers) {
   let correctCount = 0;
   let incorrectCount = 0;
   let submittedCount = 0;
+  let totalCorrectSolutions = 0;
 
   let answers = {};
   let answer = {};
 
   if (solutionDocument) {
     for (const key in solutionDocument.solutions) {
+      if (solutionDocument.solutions[key] != "") totalCorrectSolutions++;
       if (key in submittedAnswers.submitted) {
         submittedCount++;
         if (
@@ -58,6 +61,7 @@ async function compareAnswers(submittedAnswers) {
     incorrect: incorrectCount,
     unanswered: unansweredCount,
     answers: answers,
+    solutions: totalCorrectSolutions,
   };
 }
 
@@ -74,6 +78,7 @@ async function saveResult(exams) {
       incorrect: exams.results.incorrect,
       unanswered: exams.results.unanswered,
       answers: exams.results.answers,
+      solutions: exams.results.solutions,
     },
   });
   if (found) {

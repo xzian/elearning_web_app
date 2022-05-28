@@ -11,12 +11,8 @@
       <div>
         <% const answer = answers[e.selectName]; %>
         <label for="<%= e.selectId %>" class="exercise"><%= e.label %></label>
-        <input
-          class="<%= answer.class %>"
-          type="text"
-          value="<%= answer[answer.class] %>"
-          readonly
-        />
+        <input class="<%= answer.class %>" type="text" value="<%= answer.class
+        != "unanswered-answer" ? answer[answer.class] : "" %>" readonly />
       </div>
       <% } %>
     </div>
@@ -46,14 +42,15 @@
       <div>
         <% const answer = answers[e.selectName]; %>
         <label for="<%= e.selectId %>" class="exercise"><%= e.label %></label>
-        <input
-          class="<%= answer.class %>"
-          type="text"
-          value="<%= answer[answer.class] %>"
-          readonly
-        />
+        <input class="<%= answer.class %>" type="text" value="<%= answer.class
+        != "unanswered-answer" ? answer[answer.class] : "" %>" readonly />
       </div>
       <% } %>
+    </div>
+
+    <div class="fill-gaps-container">
+      <h3>Exercise 4</h3>
+      <%- include("resultsFourOfUnit" + exam.unit + ".ejs") %>
     </div>
   </div>
 </section>

@@ -17,13 +17,19 @@
   background-color: #eee;
 }
 
-:is(.true-false-container, .match-container) {
+:is(.true-false-container, .match-container, .fill-gaps-container) {
   gap: 0.5rem;
 }
 
 :is(.true-false-container, .match-container) label {
   background-color: var(--bg-content-paragraph);
   padding: 0.5rem;
+}
+
+.fill-gaps-container > div {
+  background-color: var(--bg-content-paragraph);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
 }
 
 .true-false-container div {
