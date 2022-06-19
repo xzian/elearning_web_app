@@ -1,0 +1,97 @@
+<% var answers; for (let i = 0; i < user.exams.length; i++) { if
+(user.exams[i].unit == exam.unit) { answers = user.exams[i].answers; break; } }
+%>
+<div>
+  Ο
+  <input
+    type="text"
+    style="max-width: 8ch"
+    class="<%= answers.ex4a.class %>"
+    value="<%= answers.ex4a[answers.ex4a.class] %>"
+    readonly
+  />
+  βρόχος εμφανίζεται σε μία δομή
+
+  <input
+    type="text"
+    style="max-width: 11ch"
+    class="<%= answers.ex4b.class %>"
+    value="<%= answers.ex4b[answers.ex4b.class] %>"
+    readonly
+  />
+  όταν δεν έχουμε λάβει υπόψη μας τη συνθήκη που θα σταματάει την επανάληψη.
+</div>
+<div>
+  Σε μία δομή
+  <input
+    type="text"
+    style="max-width: 8ch"
+    class="<%= answers.ex4c.class %>"
+    value="<%= answers.ex4c[answers.ex4c.class] %>"
+    readonly
+  />
+  ο κώδικας θα εκτελεστεί αν και μόνο αν η συνθήκη είναι
+  <input
+    type="text"
+    style="max-width: 7ch"
+    class="<%= answers.ex4d.class %>"
+    value="<%= answers.ex4d[answers.ex4d.class] %>"
+    readonly
+  />.
+</div>
+<div>
+  Μια μεταβλητή είναι ένα
+  <input
+    type="text"
+    style="max-width: 8ch"
+    class="<%= answers.ex4e.class %>"
+    value="<%= answers.ex4e[answers.ex4e.class] %>"
+    readonly
+  />, ή μια
+  <input
+    type="text"
+    style="max-width: 13ch"
+    class="<%= answers.ex4f.class %>"
+    value="<%= answers.ex4f[answers.ex4f.class] %>"
+    readonly
+  />
+  που αντιπροσωπεύει μια τιμή, η οποία μπορεί κάποια στιγμή να αλλάξει.
+</div>
+<div>
+  Ο
+  <input
+    type="text"
+    style="max-width: 7ch"
+    class="<%= answers.ex4g.class %>"
+    value="<%= answers.ex4g[answers.ex4g.class] %>"
+    readonly
+  />
+  τελεστής
+  <input
+    type="text"
+    style="max-width: 9ch"
+    class="<%= answers.ex4h.class %>"
+    value="<%= answers.ex4h[answers.ex4h.class] %>"
+    readonly
+  />
+  συγκρίνει δύο τιμές μεταξύ τους και επιστρέφει
+  <input
+    type="text"
+    style="max-width: 5ch"
+    class="<%= answers.ex4i.class %>"
+    value="<%= answers.ex4i[answers.ex4i.class] %>"
+    readonly
+  />
+  αν είναι ίσες.
+</div>
+<div>
+  Τα
+  <input
+    type="text"
+    style="max-width: 7ch"
+    class="<%= answers.ex4j.class %>"
+    value="<%= answers.ex4j[answers.ex4j.class] %>"
+    readonly
+  />
+  αγνοούνται από το πρόγραμμα.
+</div>

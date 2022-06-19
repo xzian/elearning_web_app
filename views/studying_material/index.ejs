@@ -660,7 +660,9 @@ public class CakeRecipe {
   <p class="centered-text">Καλή τύχη!</p>
 </div>
 <section class="content bg-clr-contrast unit-theory">
-  <h2 class="fg-clr-light">Unit 3</h2>
+  <h2 class="fg-clr-light">
+    Ενότητα 3 - Κληρονομικότητα, Ενθυλάκωση, Διεπαφές
+  </h2>
   <article>
     <h3>Κληρονομικότητα</h3>
     <div class="content-grid">
@@ -738,7 +740,13 @@ public class CakeRecipe {
   }
 }</code></pre>
       </div>
-      <p class="grid-col-span-2">Αρχείο <code>wolf.java</code></p>
+      <p class="grid-col-span-2">
+        Αρχείο <code>wolf.java</code> <br /><br />
+        Η κλάση <code>Wolf</code> είναι η βάση από την οποία κληρονομεί κάποια
+        χαρακτηριστικά η κλάση <code>Dog</code>. Αυτό σημαίνει πως δεν
+        χρειάζεται να δηλωθούν αυτά τα χαρακτηριστικά και στην κλάση
+        <code>Dog</code>.
+      </p>
       <div class="code-grid grid-col-span-2">
         <pre><code class="java">class Wolf{
   int legs;
@@ -760,7 +768,13 @@ public class CakeRecipe {
   }
 }</code></pre>
       </div>
-      <p class="grid-col-span-2">Αρχείο <code>wolfinterface.java</code></p>
+      <p class="grid-col-span-2">
+        Αρχείο <code>wolfinterface.java</code><br /><br />
+        Η διεπαφή <code>WolfInterface</code> περιέχει μεθόδους οι οποίες πρέπει
+        να υλοποιηθούν από την κλάση που θα... υλοποιήσει αυτήν τη διεπαφή. Στη
+        συγκεκριμένη περίπτωση, η κλάση <code>PitBull</code> υλοποιεί αυτές τις
+        μεθόδους.
+      </p>
       <div class="code-grid grid-column-span-2">
         <pre><code class="java">interface WolfInterface {
   void bark();

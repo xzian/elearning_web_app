@@ -1,24 +1,28 @@
-<% if (user) { %>
-<h2>Hello, <%= user.username %>!</h2>
-<h3>Your stats</h3>
+<% let total = 0; %> <% if (user) { %>
+<h2>Γεια σου, <%= user.username %>!</h2>
+<h3>Η καρτέλα με τα στατιστικά σου</h3>
 <% user.exams.sort((a, b) => a.unitNumber - b.unitNumber); %>
 <div class="cards">
-  <% user.exams.forEach((e) => { %>
+  <% user.exams.forEach((e) => { %> <% let avg = (10 * e.correct /
+  e.solutions).toPrecision(2); total += Number(avg);%>
   <div class="stat-card">
     <h4 class="grid-col-span-2"><%= e.unitTitle %></h4>
-    <span>Submitted answers:</span> <span><%= e.submitted %></span>
-    <span>Correct answers:</span> <span><%= e.correct %></span>
-    <span>Incorrect answers:</span> <span><%= e.incorrect %></span>
-    <span>Average:</span>
-    <span
-      ><%= (10 * e.correct / e.solutions/*(e.submitted +
-      e.unanswered)*/).toPrecision(2) %></span
-    >
+    <span>Απαντήσεις</span> <span><%= e.submitted %></span>
+    <span>Σωστές Απαντήσεις</span> <span><%= e.correct %></span>
+    <span>Λάθος Απαντήσεις</span> <span><%= e.incorrect %></span>
+    <span>Μέσος Όρος</span>
+    <span><%= avg %></span>
     <a href="/exams/<%= e.unit %>" class="grid-col-span-2 retry-exam"
-      >Try again?</a
+      >Επανάληψης Προσπάθειας</a
     >
   </div>
   <% }); %>
+</div>
+<%total = total / user.exams.length%>
+<div>
+  <% if (total < 5) {%> Δεν τα πήγες και πολύ καλά. Καλύτερα να ξαναδιαβάσεις
+  και να ξαναπροσπαθήσεις! <%} else if (total < 8.5) { %> Τα πήγες αρκετά καλά,
+  άρα μπορείς και καλύτερα! <% } else { %>Μπράβο! Τα πήγες περίφημα!<% } %>
 </div>
 <% } else { %>
 <h2 class="error-message-heading"><%= message %></h2>

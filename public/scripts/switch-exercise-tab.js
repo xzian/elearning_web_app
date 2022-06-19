@@ -7,9 +7,11 @@ if (
   (url == "/exams/one") |
   (url == "/exams/two") |
   (url == "/exams/three") |
+  (url == "/exams/final") |
   (url == "/exams/one/results") |
+  (url == "/exams/two/results") |
   (url == "/exams/three/results") |
-  (url == "/exams/two/results")
+  (url == "/exams/final/results")
 ) {
   exam = url.substring(1, url.length).replace("/", "-").replace("s", "");
 
