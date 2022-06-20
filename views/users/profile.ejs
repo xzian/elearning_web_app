@@ -6,7 +6,11 @@
   <% user.exams.forEach((e) => { %> <% let avg = (10 * e.correct /
   e.solutions).toPrecision(2); total += Number(avg);%>
   <div class="stat-card">
-    <h4 class="grid-col-span-2"><%= e.unitTitle %></h4>
+    <% if (e.unitNumber < user.exams.length) { %>
+    <h4 class="grid-col-span-2">Διαγώνισμα <%= e.unitNumber %></h4>
+    <% } else { %>
+    <h4 class="grid-col-span-2">Τελικό Διαγώνισμα</h4>
+    <% } %>
     <span>Απαντήσεις</span> <span><%= e.submitted %></span>
     <span>Σωστές Απαντήσεις</span> <span><%= e.correct %></span>
     <span>Λάθος Απαντήσεις</span> <span><%= e.incorrect %></span>
