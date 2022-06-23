@@ -49,6 +49,7 @@
 .match-container label {
   display: inline-block;
   min-width: 18ch;
+  width: 75%;
 }
 
 :is(.true-false-container, .match-container, .multiple-choice-container, .fill-gaps-container) {
@@ -90,4 +91,17 @@
 
 .incorrect-answer {
   background-color: red;
+}
+
+:is(.true-false-container, .match-container, .multiple-choice-container)
+  input[class$="-answer"] {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-block: auto;
+  margin-inline: auto 0;
+}
+
+.true-false-container select {
+  height: 2rem;
+  margin-block: auto;
 }
