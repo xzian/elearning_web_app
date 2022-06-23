@@ -8,7 +8,7 @@
   <div class="stat-card">
     <% if (e.unitNumber < user.exams.length) { %>
     <h4 class="grid-col-span-2">Διαγώνισμα <%= e.unitNumber %></h4>
-    <% } else { %>
+    <% } else if (e.unitNumber == 4) { %>
     <h4 class="grid-col-span-2">Τελικό Διαγώνισμα</h4>
     <% } %>
     <span>Απαντήσεις</span> <span><%= e.submitted %></span>
